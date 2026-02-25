@@ -1,16 +1,28 @@
+<div align="center">
+
 ## Hi there 👋
 
-<!--
-**T-1234567890/T-1234567890** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=25&duration=4200&pause=40&color=7F7F7F&center=true&vCenter=true&width=900&lines=Hello+World;%24+ls;%24+pwd;%24+cd+projects;%24+git+status;%24+git+pull;%24+npm+run+dev;%24+python+main.py;%24+code+.;%24+cat+README.md;%24+whoami;%24+rm+-rf;%24+_&repeat=true" />
+</p>
 
-Here are some ideas to get you started:
+### 🧠 About Me
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+A Human. <br>
+An IB Student.
+
+### 🚀 Current Focus
+
+Pomodoro App <br>
+AI workflows and things <br>
+Creative media & design <br>
+Photography <br>
+
+### 📌 Featured Project
+
+➡️ [Pomodoro App](https://pomodoro-app.tech)
+
+### 📫 Connect
+
+Website & Blog (maybe coming soon)
+</div>
