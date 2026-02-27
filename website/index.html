@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Tony — Developer Landing</title>
+    <meta
+      name="description"
+      content="A calm, minimal developer landing page with subtle motion."
+    />
+    <link rel="icon" href="/assets/logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__logo" href="#" aria-label="Home">
+          <img src="/assets/logo.png" alt="" width="28" height="28" />
+        </a>
+
+        <div class="nav__center">
+          <a class="nav__link" href="#about" data-i18n="nav_about">About</a>
+          <a class="nav__link" href="#links" data-i18n="nav_links">Links</a>
+          <a class="nav__link" href="#projects" data-i18n="nav_projects"
+            >Projects</a
+          >
+          <a class="nav__link" href="#blog" data-i18n="nav_blog">Blog</a>
+        </div>
+
+        <button class="nav__lang" type="button" aria-pressed="false">
+          中文
+        </button>
+      </nav>
+    </header>
+
+    <main class="page">
+      <section class="hero state-name" id="heroRoot" aria-label="Hero">
+        <div class="hero__universe">
+          <div class="hero__stage">
+            <div class="logo-cloud" aria-hidden="true">
+              <!-- Large -->
+              <span class="logo" style="--x:-520;--y:-180;--dx:5;--dy:-4;--d:36s;--delay:-3.2s;--op:0.14;--s:62">
+                <img class="logo__img" src="https://cdn.simpleicons.org/apple/0B0F14" data-fallback="/assets/icons/apple.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:0;--y:-300;--dx:-4;--dy:5;--d:40s;--delay:-11.1s;--op:0.13;--s:60">
+                <img class="logo__img" src="https://cdn.simpleicons.org/swift/0B0F14" data-fallback="/assets/icons/swift.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:560;--y:-160;--dx:4;--dy:-3;--d:38s;--delay:-7.4s;--op:0.15;--s:64">
+                <img class="logo__img" src="https://cdn.simpleicons.org/github/0B0F14" data-fallback="/assets/icons/github.svg" alt="" />
+              </span>
+
+              <!-- Medium (dev stack) -->
+              <span class="logo" style="--x:520;--y:60;--dx:-5;--dy:4;--d:44s;--delay:-16.2s;--op:0.10;--s:46">
+                <img class="logo__img" src="https://cdn.simpleicons.org/google/0B0F14" data-fallback="/assets/icons/google.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:-580;--y:90;--dx:4;--dy:5;--d:46s;--delay:-9.6s;--op:0.11;--s:46">
+                <img class="logo__img" src="https://cdn.simpleicons.org/python/0B0F14" data-fallback="/assets/icons/python.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:360;--y:240;--dx:-4;--dy:-5;--d:48s;--delay:-6.1s;--op:0.10;--s:44">
+                <img class="logo__img" src="https://cdn.simpleicons.org/rust/0B0F14" data-fallback="/assets/icons/rust.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:-360;--y:250;--dx:5;--dy:-4;--d:50s;--delay:-18.8s;--op:0.10;--s:44">
+                <img class="logo__img" src="https://cdn.simpleicons.org/docker/0B0F14" data-fallback="/assets/icons/docker.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:620;--y:240;--dx:-5;--dy:-4;--d:52s;--delay:-12.7s;--op:0.09;--s:42">
+                <img class="logo__img" src="https://cdn.simpleicons.org/linux/0B0F14" data-fallback="/assets/icons/linux.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:-640;--y:-10;--dx:4;--dy:3;--d:54s;--delay:-21.3s;--op:0.09;--s:42">
+                <img class="logo__img" src="https://cdn.simpleicons.org/nodedotjs/0B0F14" data-fallback="/assets/icons/nodedotjs.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:-120;--y:320;--dx:3;--dy:-5;--d:56s;--delay:-14.9s;--op:0.10;--s:40">
+                <img class="logo__img" src="https://cdn.simpleicons.org/npm/0B0F14" data-fallback="/assets/icons/npm.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:160;--y:-330;--dx:-3;--dy:4;--d:58s;--delay:-24.6s;--op:0.09;--s:42">
+                <img class="logo__img" src="https://cdn.simpleicons.org/xcode/0B0F14" data-fallback="/assets/icons/xcode.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:640;--y:-10;--dx:-5;--dy:3;--d:60s;--delay:-4.8s;--op:0.09;--s:42">
+                <img class="logo__img" src="https://cdn.simpleicons.org/visualstudiocode/0B0F14" data-fallback="/assets/icons/visualstudiocode.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:260;--y:-320;--dx:4;--dy:3;--d:62s;--delay:-19.5s;--op:0.09;--s:42">
+                <img class="logo__img" src="https://cdn.simpleicons.org/jetbrains/0B0F14" data-fallback="/assets/icons/jetbrains.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:-260;--y:-320;--dx:-4;--dy:3;--d:64s;--delay:-8.6s;--op:0.09;--s:40">
+                <img class="logo__img" src="https://cdn.simpleicons.org/cloudflare/0B0F14" data-fallback="/assets/icons/cloudflare.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:80;--y:330;--dx:-4;--dy:-4;--d:66s;--delay:-28.1s;--op:0.09;--s:40">
+                <img class="logo__img" src="https://cdn.simpleicons.org/firebase/0B0F14" data-fallback="/assets/icons/firebase.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:-520;--y:-280;--dx:5;--dy:4;--d:68s;--delay:-15.0s;--op:0.09;--s:40">
+                <img class="logo__img" src="https://cdn.simpleicons.org/openai/0B0F14" data-fallback="/assets/icons/openai.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:520;--y:-290;--dx:-5;--dy:4;--d:70s;--delay:-25.7s;--op:0.09;--s:40">
+                <img class="logo__img" src="https://cdn.simpleicons.org/googlegemini/0B0F14" data-fallback="/assets/icons/googlegemini.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:-60;--y:-350;--dx:4;--dy:3;--d:72s;--delay:-32.4s;--op:0.08;--s:38">
+                <img class="logo__img" src="https://cdn.simpleicons.org/googledeepmind/0B0F14" data-fallback="/assets/icons/googledeepmind.svg" alt="" />
+              </span>
+
+              <!-- Medium (web stack) -->
+              <span class="logo" style="--x:420;--y:320;--dx:-4;--dy:-4;--d:58s;--delay:-10.2s;--op:0.10;--s:42">
+                <img class="logo__img" src="https://cdn.simpleicons.org/javascript/0B0F14" data-fallback="/assets/icons/javascript.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:700;--y:120;--dx:-5;--dy:4;--d:62s;--delay:-27.4s;--op:0.09;--s:40">
+                <img class="logo__img" src="https://cdn.simpleicons.org/html5/0B0F14" data-fallback="/assets/icons/html5.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:-700;--y:160;--dx:5;--dy:-4;--d:64s;--delay:-22.1s;--op:0.09;--s:40">
+                <img class="logo__img" src="https://cdn.simpleicons.org/css3/0B0F14" data-fallback="/assets/icons/css3.svg" alt="" />
+              </span>
+
+              <!-- Small (creative + devices) -->
+              <span class="logo" style="--x:-680;--y:-160;--dx:4;--dy:5;--d:74s;--delay:-6.9s;--op:0.09;--s:36">
+                <img class="logo__img" src="https://cdn.simpleicons.org/canon/0B0F14" data-fallback="/assets/icons/canon.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:720;--y:-220;--dx:-4;--dy:5;--d:76s;--delay:-19.9s;--op:0.09;--s:36">
+                <img class="logo__img" src="https://cdn.simpleicons.org/dji/0B0F14" data-fallback="/assets/icons/dji.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:-740;--y:260;--dx:5;--dy:-4;--d:78s;--delay:-13.3s;--op:0.08;--s:36">
+                <img class="logo__img" src="https://cdn.simpleicons.org/sony/0B0F14" data-fallback="/assets/icons/sony.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:760;--y:270;--dx:-5;--dy:-4;--d:80s;--delay:-31.1s;--op:0.08;--s:36">
+                <img class="logo__img" src="https://cdn.simpleicons.org/adobecreativecloud/0B0F14" data-fallback="/assets/icons/adobecreativecloud.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:-740;--y:-270;--dx:4;--dy:3;--d:82s;--delay:-24.2s;--op:0.08;--s:36">
+                <img class="logo__img" src="https://cdn.simpleicons.org/davinciresolve/0B0F14" data-fallback="/assets/icons/davinciresolve.svg" alt="" />
+              </span>
+
+              <!-- Small (social) -->
+              <span class="logo" style="--x:760;--y:-60;--dx:-4;--dy:4;--d:54s;--delay:-17.4s;--op:0.10;--s:34">
+                <img class="logo__img" src="https://cdn.simpleicons.org/steam/0B0F14" data-fallback="/assets/icons/steam.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:-760;--y:10;--dx:4;--dy:4;--d:56s;--delay:-29.2s;--op:0.10;--s:34">
+                <img class="logo__img" src="https://cdn.simpleicons.org/discord/0B0F14" data-fallback="/assets/icons/discord.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:260;--y:340;--dx:-4;--dy:-4;--d:58s;--delay:-11.7s;--op:0.10;--s:32">
+                <img class="logo__img" src="https://cdn.simpleicons.org/x/0B0F14" data-fallback="/assets/icons/x.svg" alt="" />
+              </span>
+              <span class="logo" style="--x:-260;--y:340;--dx:4;--dy:-4;--d:60s;--delay:-23.6s;--op:0.10;--s:32">
+                <img class="logo__img" src="https://cdn.simpleicons.org/500px/0B0F14" data-fallback="/assets/icons/500px.svg" alt="" />
+              </span>
+            </div>
+
+            <div class="center-stack" id="center-stack">
+              <div class="hero-state hero-state--intro" id="hero-intro">
+                <h1 class="hero__title nameLine" id="heroNameLine">
+                  <span class="heroPrefix" data-i18n="hero_hi">Hi, I’m</span>
+                  <span class="type-reserve" aria-label="Name">
+                    <span class="type-text" id="typedName"></span>
+                    <span class="cursor" aria-hidden="true">|</span>
+                  </span>
+                </h1>
+              </div>
+
+              <div
+                class="hero-state hero-state--terminal"
+                id="hero-terminal"
+                aria-hidden="true"
+              >
+                <div class="terminal-embed" id="heroTerminalCard" aria-hidden="true">
+                  <p align="center">
+                    <img
+                      src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=25&duration=4200&pause=40&color=7F7F7F&center=true&vCenter=true&width=900&lines=Hello+World;%24+ls;%24+pwd;%24+cd+projects;%24+git+status;%24+git+pull;%24+npm+run+dev;python+main.py;main.rs;index.html;AppDelegate.swift;GoogleService-Info.plist;%24+code+.;README.md;%24+whoami;%24+rm+-rf;%24+_&repeat=true"
+                    />
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-scroll-space" aria-hidden="true"></div>
+
+          <div class="hero-trigger" id="heroSentinel" aria-hidden="true"></div>
+          <div class="nav-trigger" id="nav-trigger" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-label="About">
+        <div class="section__inner">
+          <h2 class="section__title" data-i18n="about_title">About</h2>
+          <p class="section__text" data-i18n="about_body">
+            This is a landing page, not a portfolio. One page. One vibe.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="links" aria-label="Links">
+        <div class="section__inner section__inner--wide">
+          <div class="links-card reveal" id="linksCard">
+            <div class="links-card__head">
+              <h2 class="section__title links-card__title" data-i18n="links_title">
+                Links
+              </h2>
+              <p class="links-card__sub" data-i18n="links_sub">
+                Find me around the internet.
+              </p>
+            </div>
+
+            <div class="links-grid" role="list" aria-label="Social links">
+              <a
+                class="linkBtn"
+                role="listitem"
+                href="https://github.com/T-1234567890"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                  <img
+                    class="linkBtn__icon logo__img"
+                    src="https://cdn.simpleicons.org/github/0B0F14"
+                    data-fallback="/assets/icons/github.svg"
+                    alt=""
+                  />
+                <span class="linkBtn__label">GitHub</span>
+              </a>
+
+              <a
+                class="linkBtn"
+                role="listitem"
+                href="https://x.com/TonyHu12345"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
+              >
+                  <img
+                    class="linkBtn__icon logo__img"
+                    src="https://cdn.simpleicons.org/x/0B0F14"
+                    data-fallback="/assets/icons/x.svg"
+                    alt=""
+                  />
+                <span class="linkBtn__label">X</span>
+              </a>
+
+              <a
+                class="linkBtn"
+                role="listitem"
+                href="https://500px.com.cn/community/user-details/4b1bb63c840e19472cea2526eecba9209"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="500px"
+              >
+                  <img
+                    class="linkBtn__icon logo__img"
+                    src="https://cdn.simpleicons.org/500px/0B0F14"
+                    data-fallback="/assets/icons/500px.svg"
+                    alt=""
+                  />
+                <span class="linkBtn__label">500px</span>
+              </a>
+
+              <a
+                class="linkBtn"
+                role="listitem"
+                href="https://steamcommunity.com/profiles/76561199725300446/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Steam"
+              >
+                  <img
+                    class="linkBtn__icon logo__img"
+                    src="https://cdn.simpleicons.org/steam/0B0F14"
+                    data-fallback="/assets/icons/steam.svg"
+                    alt=""
+                  />
+                <span class="linkBtn__label">Steam</span>
+              </a>
+
+              <button
+                class="linkBtn linkBtn--button"
+                role="listitem"
+                type="button"
+                id="discordCopy"
+                aria-label="Discord (copy ID)"
+              >
+                  <img
+                    class="linkBtn__icon logo__img"
+                    src="https://cdn.simpleicons.org/discord/0B0F14"
+                    data-fallback="/assets/icons/discord.svg"
+                    alt=""
+                  />
+                <span class="linkBtn__label">Discord</span>
+                <span class="linkBtn__tip" id="discordTip" aria-live="polite"
+                  >Copied</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-label="Projects">
+        <div class="section__inner">
+          <h2 class="section__title" data-i18n="projects_title">Projects</h2>
+          <p class="section__text" data-i18n="projects_body">
+            Keep it minimal. A single highlight is enough.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="blog" aria-label="Blog">
+        <div class="section__inner">
+          <h2 class="section__title" data-i18n="blog_title">Blog</h2>
+          <p class="section__text" data-i18n="blog_body">
+            Notes on building calm, technical UI.
+          </p>
+        </div>
+      </section>
+
+      <footer class="footer reveal" id="siteFooter">
+        <div class="footer__inner footer__inner--simple">
+          <div class="footer__line" data-i18n="footer_line1">
+            © 2026 Tony. All rights reserved.
+          </div>
+          <div class="footer__tiny" data-i18n="footer_line2">
+            This website uses cookies for basic functionality and analytics.
+          </div>
+          <div class="footer__line">
+            <a class="footer__link" href="#" id="privacyOpen" data-i18n="footer_privacy"
+              >Privacy Policy</a
+            >
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <dialog class="modal" id="privacyDialog" aria-label="Privacy Policy">
+      <form method="dialog" class="modal__card">
+        <div class="modal__head">
+          <h2 class="modal__title" data-i18n="privacy_title">Privacy Policy</h2>
+          <button class="modal__close" value="close" aria-label="Close">
+            Close
+          </button>
+        </div>
+        <div class="modal__body">
+          <p class="modal__p" data-i18n="privacy_1">
+            This website may use cookies.
+          </p>
+          <p class="modal__p" data-i18n="privacy_2">
+            Cookies are used only for basic functionality and analytics.
+          </p>
+          <p class="modal__p" data-i18n="privacy_3">
+            No personal data is sold.
+          </p>
+          <p class="modal__p" data-i18n="privacy_4">
+            You can disable cookies in your browser settings.
+          </p>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="https://unpkg.com/typewriter-effect@2.18.2/dist/core.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
