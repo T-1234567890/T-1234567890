@@ -36,6 +36,7 @@ const ICONS = [
   ["jetbrains", "jetbrains.svg"],
   ["dji", "dji.svg"],
   ["sony", "sony.svg"],
+  ["adobe", "adobe.svg"],
   ["adobecreativecloud", "adobecreativecloud.svg"],
   ["davinciresolve", "davinciresolve.svg"],
 ];

@@ -9,8 +9,8 @@
   --shadow-soft: 0 8px 24px rgba(11,15,20,0.06);
   --radius: 18px;
   --ease: cubic-bezier(0.22,1,0.36,1);
-  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Monaco, Consolas, "JetBrains Mono", "Liberation Mono", monospace;
-  --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Inter, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --sans: var(--mono);
 }
 
 *{ box-sizing:border-box; }
@@ -258,50 +258,57 @@ body{
 }
 
 .nameLine{
-  display:inline-flex;
-  align-items: baseline;
-  justify-content:center;
-  gap: 12px;
-  flex-wrap: nowrap;
-  white-space: nowrap;
+  display:grid;
+  justify-items: center;
+  align-content: center;
+  row-gap: 10px;
+  text-align: center;
   max-width: 100%;
   overflow: hidden;
 }
 
 .heroPrefix{
-  display:inline-block;
-  width: 5.6em;
-  text-align: right;
+  display:block;
+  font-weight: 520;
   white-space: nowrap;
   flex: 0 0 auto;
 }
 
 .type-reserve{
   display:inline-flex;
-  align-items: baseline;
-  justify-content: flex-start;
-  width: 12ch;
-  text-align:left;
-  font-family: var(--mono);
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+  font-family: "JetBrains Mono", var(--mono);
   font-weight: 650;
   letter-spacing: -0.02em;
   font-variant-ligatures: none;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum" 1;
-  line-height: 1.05;
+  line-height: 1;
+  block-size: 1em;
+  white-space: nowrap;
+}
+.hero-name-slot{
+  width: 14ch;
+  flex: 0 0 auto;
+  gap: 0.2ch;
 }
 .type-text{
   display:inline-block;
   min-height: 1em;
+  line-height: 1;
+  text-align:center;
 }
 
 .cursor{
   display:inline-block;
   width: 1ch;
-  font-family: var(--mono);
+  font-family: "JetBrains Mono", var(--mono);
   opacity: 0.85;
-  margin-left: 2px;
-  transform: translateY(-0.02em);
+  margin-left: 0;
+  transform: translateY(0);
+  line-height: 1;
   animation: blink 1.0s steps(2,end) infinite;
   text-shadow: 0 0 10px rgba(74,144,226,0.16);
 }
@@ -322,19 +329,49 @@ body{
   pointer-events:none;
   user-select:none;
   z-index: 0;
-  transform: translateZ(0) scale(var(--logo-cloud-scale, 1));
-  transform-origin: 50% 50%;
+  --logo-spread: 0.72;
+  --logo-size: 1.10;
+  --logo-safe-inset: 18px;
 }
 .logo{
   position:absolute;
   left: 50%;
   top: 50%;
-  width: calc(var(--s, 38) * 1px);
-  height: calc(var(--s, 38) * 1px);
+  --logo-px: calc(var(--s, 38) * 1px * var(--logo-size, 1) * var(--b, 1));
+  width: var(--logo-px);
+  height: var(--logo-px);
+  --max-x: max(
+    0px,
+    calc(50vw - var(--logo-safe-inset, 0px) - (var(--logo-px) / 2))
+  );
+  --max-y: max(
+    0px,
+    calc(50svh - var(--logo-safe-inset, 0px) - (var(--logo-px) / 2))
+  );
+  --x0: clamp(
+    calc(var(--max-x) * -1),
+    calc(var(--x) * 1px * var(--logo-spread, 1)),
+    var(--max-x)
+  );
+  --y0: clamp(
+    calc(var(--max-y) * -1),
+    calc(var(--y) * 1px * var(--logo-spread, 1)),
+    var(--max-y)
+  );
+  --x1: clamp(
+    calc(var(--max-x) * -1),
+    calc((var(--x) + var(--dx, 4)) * 1px * var(--logo-spread, 1)),
+    var(--max-x)
+  );
+  --y1: clamp(
+    calc(var(--max-y) * -1),
+    calc((var(--y) + var(--dy, -3)) * 1px * var(--logo-spread, 1)),
+    var(--max-y)
+  );
   opacity: var(--op, 0.10);
   transform:
     translate3d(-50%,-50%,0)
-    translate3d(calc(var(--x) * 1px), calc(var(--y) * 1px), 0);
+    translate3d(var(--x0), var(--y0), 0);
   animation: floaty var(--d) ease-in-out infinite;
   animation-delay: var(--delay, 0s);
   filter: blur(0px);
@@ -342,17 +379,8 @@ body{
 }
 .logo-cloud img{
   display:block;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-.logo-cloud .logo__img{
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 .logo__img{
@@ -655,21 +683,21 @@ body{
   0%{
     transform:
       translate3d(-50%,-50%,0)
-      translate3d(calc(var(--x) * 1px), calc(var(--y) * 1px), 0);
+      translate3d(var(--x0), var(--y0), 0);
   }
   50%{
     transform:
       translate3d(-50%,-50%,0)
       translate3d(
-        calc((var(--x) + var(--dx, 4)) * 1px),
-        calc((var(--y) + var(--dy, -3)) * 1px),
+        var(--x1),
+        var(--y1),
         0
       );
   }
   100%{
     transform:
       translate3d(-50%,-50%,0)
-      translate3d(calc(var(--x) * 1px), calc(var(--y) * 1px), 0);
+      translate3d(var(--x0), var(--y0), 0);
   }
 }
 
@@ -683,24 +711,10 @@ body{
   50%{ opacity: 1; }
 }
 
-@media (max-width: 1100px){
-  .logo-cloud{ --logo-cloud-scale: 0.86; }
-}
-@media (max-width: 900px){
-  .logo-cloud{ --logo-cloud-scale: 0.72; }
-}
-@media (max-width: 720px){
-  .logo-cloud{ --logo-cloud-scale: 0.58; }
-}
-@media (max-height: 700px){
-  .logo-cloud{ --logo-cloud-scale: 0.78; }
-}
-
 @media (max-width: 620px){
   .nav__center{ gap: 8px; }
   .nav__link{ padding: 7px 8px; }
-  .nameLine{ gap: 10px; }
-  .heroPrefix{ width: 5.1em; }
+  .nameLine{ row-gap: 8px; }
   .links-card{ padding: 22px; }
   .links-card__head{ flex-direction:column; align-items:flex-start; }
   .terminal-embed img{ width: min(1200px, 96vw); }
@@ -708,11 +722,35 @@ body{
 
 @media (max-width: 420px){
   .hero__title{ font-size: 18px; }
-  .nameLine{ gap: 8px; }
-  .heroPrefix{ width: 4.8em; }
+  .nameLine{ row-gap: 6px; }
   .terminal-embed img{ width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce){
   .logo, .terminal-card, .hero-state, .nav, .cursor, .reveal{ animation: none !important; transition: none !important; }
+}
+
+@media (max-width: 1100px){
+  .logo-cloud{
+    --logo-spread: 0.70;
+    --logo-size: 1.08;
+  }
+}
+@media (max-width: 900px){
+  .logo-cloud{
+    --logo-spread: 0.68;
+    --logo-size: 1.06;
+  }
+}
+@media (max-width: 720px){
+  .logo-cloud{
+    --logo-spread: 0.66;
+    --logo-size: 1.04;
+  }
+}
+@media (max-width: 520px){
+  .logo-cloud{
+    --logo-spread: 0.64;
+    --logo-size: 1.02;
+  }
 }

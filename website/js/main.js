@@ -20,11 +20,20 @@ for (const img of document.querySelectorAll("img.logo__img[data-fallback]")) {
   img.addEventListener(
     "error",
     () => {
-      if (img.dataset.fallbackUsed === "1") return;
-      const fallback = img.getAttribute("data-fallback");
-      if (!fallback) return;
-      img.dataset.fallbackUsed = "1";
-      img.src = fallback;
+      const stage = Number(img.dataset.fallbackStage ?? "0");
+
+      if (stage === 0) {
+        const fallback = img.getAttribute("data-fallback");
+        if (!fallback) return;
+        img.dataset.fallbackStage = "1";
+        img.src = fallback;
+        return;
+      }
+
+      if (stage === 1) {
+        img.dataset.fallbackStage = "2";
+        img.src = "assets/logo.svg";
+      }
     },
   );
 }
