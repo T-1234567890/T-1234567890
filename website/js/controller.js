@@ -120,52 +120,24 @@ export function initHeroScrollTransition({
   );
   activeObs.observe(heroRootEl);
 
-  heroRootEl.classList.add("use-progress");
-
-  let heroTop = 0;
-  let heroHeight = 1;
-  const refreshMetrics = () => {
-    const rect = heroRootEl.getBoundingClientRect();
-    heroTop = rect.top + window.scrollY;
-    heroHeight = Math.max(1, heroRootEl.offsetHeight || rect.height || 1);
-  };
-
-  const clamp01 = (n) => Math.max(0, Math.min(1, n));
-
-  const morphStart = 0.12;
-  const morphFull = 0.2;
-
-  let raf = 0;
-  const update = () => {
-    raf = 0;
-    const y = window.scrollY || 0;
-    const progress = clamp01((y - heroTop) / heroHeight);
-
-    if (!terminalEnabled) {
-      setState("name");
-      return;
-    }
-
-    const morph = clamp01((progress - morphStart) / (morphFull - morphStart));
-    heroRootEl.style.setProperty("--hero-morph", morph.toFixed(4));
-
-    if (progress >= morphStart) setState("terminal");
-    else setState("name");
-  };
-
-  const schedule = () => {
-    if (raf) return;
-    raf = requestAnimationFrame(update);
-  };
-
-  refreshMetrics();
-  schedule();
-  window.addEventListener("scroll", schedule, { passive: true });
-  const onResize = () => {
-    refreshMetrics();
-    schedule();
-  };
-  window.addEventListener("resize", onResize, { passive: true });
+  // Swap just the center content (name <-> terminal) based on a sentinel leaving the viewport.
+  // This keeps the logo cloud/background static and avoids layout jumps.
+  let swapObs = null;
+  if (heroSentinelEl) {
+    swapObs = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        const showName = Boolean(entry?.isIntersecting);
+        if (!terminalEnabled) {
+          setState("name");
+          return;
+        }
+        setState(showName ? "name" : "terminal");
+      },
+      { threshold: 0 },
+    );
+    swapObs.observe(heroSentinelEl);
+  }
 
   const navObs = new IntersectionObserver(
     (entries) => {
@@ -183,9 +155,7 @@ export function initHeroScrollTransition({
 
   return () => {
     activeObs.disconnect();
-    window.removeEventListener("scroll", schedule);
-    window.removeEventListener("resize", onResize);
     navObs.disconnect();
-    if (raf) cancelAnimationFrame(raf);
+    swapObs?.disconnect();
   };
 }

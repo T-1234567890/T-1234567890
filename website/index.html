@@ -24,17 +24,26 @@
 
     <header class="topbar">
       <nav class="nav" aria-label="Primary">
-        <a class="nav__logo" href="#" aria-label="Home">
+        <a class="nav__logo" href="/" aria-label="Home">
           <img src="assets/logo.svg" alt="" width="28" height="28" />
         </a>
 
         <div class="nav__center">
-          <a class="nav__link" href="#about" data-i18n="nav_about">About</a>
-          <a class="nav__link" href="#links" data-i18n="nav_links">Links</a>
-          <a class="nav__link" href="#projects" data-i18n="nav_projects"
-            >Projects</a
+          <a class="nav__link" href="/about/" data-i18n="nav_about">About</a>
+          <a
+            class="nav__link"
+            href="/blog/"
+            data-i18n="nav_blog"
           >
-          <a class="nav__link" href="#blog" data-i18n="nav_blog">Blog</a>
+            Blog
+          </a>
+          <a
+            class="nav__link"
+            href="/projects/"
+            data-i18n="nav_projects"
+          >
+            Projects
+          </a>
         </div>
 
         <button class="nav__lang" type="button" aria-pressed="false">
@@ -186,17 +195,22 @@
         </div>
       </section>
 
-      <section class="section" id="about" aria-label="About">
-        <div class="section__inner">
-          <h2 class="section__title" data-i18n="about_title">About</h2>
-          <p class="section__text" data-i18n="about_body">
-            This is a landing page, not a portfolio. One page. One vibe.
-          </p>
-        </div>
-      </section>
-
       <section class="section" id="links" aria-label="Links">
         <div class="section__inner section__inner--wide">
+          <nav class="links-card links-card--nav reveal" aria-label="Quick navigation">
+            <div class="links-grid nav-panel__grid" role="list" aria-label="Navigation links">
+              <a class="linkBtn nav-panel__btn" role="listitem" href="/about/">
+                <span class="linkBtn__label" data-i18n="nav_about">About</span>
+              </a>
+              <a class="linkBtn nav-panel__btn" role="listitem" href="/blog/">
+                <span class="linkBtn__label" data-i18n="nav_blog">Blog</span>
+              </a>
+              <a class="linkBtn nav-panel__btn" role="listitem" href="/projects/">
+                <span class="linkBtn__label" data-i18n="nav_projects">Projects</span>
+              </a>
+            </div>
+          </nav>
+
           <div class="links-card reveal" id="linksCard">
             <div class="links-card__head">
               <h2 class="section__title links-card__title" data-i18n="links_title">
@@ -299,24 +313,6 @@
         </div>
       </section>
 
-      <section class="section" id="projects" aria-label="Projects">
-        <div class="section__inner">
-          <h2 class="section__title" data-i18n="projects_title">Projects</h2>
-          <p class="section__text" data-i18n="projects_body">
-            Keep it minimal. A single highlight is enough.
-          </p>
-        </div>
-      </section>
-
-      <section class="section" id="blog" aria-label="Blog">
-        <div class="section__inner">
-          <h2 class="section__title" data-i18n="blog_title">Blog</h2>
-          <p class="section__text" data-i18n="blog_body">
-            Notes on building calm, technical UI.
-          </p>
-        </div>
-      </section>
-
       <footer class="footer reveal" id="siteFooter">
         <div class="footer__inner footer__inner--simple">
           <div class="footer__line" data-i18n="footer_line1">
@@ -326,38 +322,13 @@
             This website uses cookies for basic functionality and analytics.
           </div>
           <div class="footer__line">
-            <a class="footer__link" href="#" id="privacyOpen" data-i18n="footer_privacy"
-              >Privacy Policy</a
-            >
+            <a class="footer__link" href="/privacy/" data-i18n="footer_privacy">Privacy Policy</a>
           </div>
         </div>
       </footer>
     </main>
 
-    <dialog class="modal" id="privacyDialog" aria-label="Privacy Policy">
-      <form method="dialog" class="modal__card">
-        <div class="modal__head">
-          <h2 class="modal__title" data-i18n="privacy_title">Privacy Policy</h2>
-          <button class="modal__close" value="close" aria-label="Close">
-            Close
-          </button>
-        </div>
-        <div class="modal__body">
-          <p class="modal__p" data-i18n="privacy_1">
-            This website may use cookies.
-          </p>
-          <p class="modal__p" data-i18n="privacy_2">
-            Cookies are used only for basic functionality and analytics.
-          </p>
-          <p class="modal__p" data-i18n="privacy_3">
-            No personal data is sold.
-          </p>
-          <p class="modal__p" data-i18n="privacy_4">
-            You can disable cookies in your browser settings.
-          </p>
-        </div>
-      </form>
-    </dialog>
+    <!-- Privacy Policy lives at /privacy/ -->
 
     <script src="https://unpkg.com/typewriter-effect@2.18.2/dist/core.js"></script>
     <script type="module" src="js/main.js"></script>

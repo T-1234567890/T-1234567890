@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects — 1234567890</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    />
+    <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/logo.png" type="image/png" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="subpage projects-page">
+    <div class="bg" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__logo" href="/" aria-label="Home">
+          <img src="/assets/logo.svg" alt="" width="28" height="28" />
+        </a>
+
+        <div class="nav__center">
+          <a class="nav__link" href="/about/">About</a>
+          <a class="nav__link" href="/blog/">Blog</a>
+          <a class="nav__link" href="/projects/" aria-current="page">Projects</a>
+        </div>
+
+        <button class="nav__lang" type="button" aria-pressed="false">中文</button>
+      </nav>
+    </header>
+
+    <main class="page">
+      <div class="page-shell stack">
+        <section class="page-header">
+          <p class="eyebrow">Projects</p>
+          <h1 class="page-title">Projects</h1>
+          <p class="page-lede">Things I build and experiment with.</p>
+        </section>
+
+        <section class="projects-grid" aria-label="Projects list">
+          <a
+            class="project-card project-card--external"
+            href="https://pomodoro-app.tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Pomodoro App (opens external site)"
+          >
+            <div class="project-card__icon" aria-hidden="true">
+              <img src="/assets/Icon-iOS-Default-1024x1024@1x.png" alt="" />
+            </div>
+            <div class="project-card__meta">
+              <h2 class="project-card__title">Pomodoro App</h2>
+              <p class="project-card__desc">Minimal focus timer built for macOS.</p>
+              <span class="project-card__hint" aria-hidden="true">Opens external site</span>
+            </div>
+          </a>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
