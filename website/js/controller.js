@@ -146,6 +146,7 @@ const I18N = {
 
 export function initLanguageToggle({ buttonEl }) {
   const storageKey = "lang";
+  const manifestPath = "/blog/manifest.json";
 
   const readStored = () => {
     try {
@@ -160,6 +161,43 @@ export function initLanguageToggle({ buttonEl }) {
     try {
       localStorage.setItem(storageKey, lang);
     } catch {}
+  };
+
+  const normalizePath = (p) => {
+    // Keep "/" as-is; otherwise trim trailing slashes.
+    if (!p) return "/";
+    return p === "/" ? "/" : p.replace(/\/+$/, "");
+  };
+
+  const getLangFromPath = () => {
+    const p = normalizePath(window.location.pathname || "/");
+    return p === "/zh" || p.startsWith("/zh/") ? "zh" : "en";
+  };
+
+  const getBlogRouteInfo = () => {
+    const p = normalizePath(window.location.pathname || "/");
+    // /blog or /blog/<slug>
+    let m = p.match(/^\/blog(?:\/([^/]+))?$/);
+    if (m) return { isBlog: true, slug: m[1] || null, lang: "en" };
+    // /zh/blog or /zh/blog/<slug>
+    m = p.match(/^\/zh\/blog(?:\/([^/]+))?$/);
+    if (m) return { isBlog: true, slug: m[1] || null, lang: "zh" };
+    return { isBlog: false, slug: null, lang: getLangFromPath() };
+  };
+
+  const buildBlogUrl = ({ slug, lang }) => {
+    const base = lang === "zh" ? "/zh/blog" : "/blog";
+    if (!slug) return `${base}/`;
+    return `${base}/${slug}/`;
+  };
+
+  const setDisabled = (reason) => {
+    buttonEl.disabled = true;
+    buttonEl.setAttribute("aria-disabled", "true");
+    // Minimal visual disable without redesigning CSS.
+    buttonEl.style.opacity = "0.55";
+    buttonEl.style.cursor = "not-allowed";
+    if (reason) buttonEl.title = reason;
   };
 
   const apply = (lang) => {
@@ -179,12 +217,67 @@ export function initLanguageToggle({ buttonEl }) {
     writeStored(lang);
   };
 
-  let lang =
-    readStored() ??
-    (document.documentElement.dataset.lang === "zh" ? "zh" : "en");
+  const stored = readStored();
+  const blogInfo = getBlogRouteInfo();
+
+  // URL is the source of truth for blog routes.
+  // If user preference differs, redirect to the matching blog URL.
+  if (blogInfo.isBlog && stored && stored !== blogInfo.lang) {
+    // Index routes always exist (generated), so redirect immediately.
+    if (!blogInfo.slug) {
+      window.location.replace(
+        buildBlogUrl({ slug: blogInfo.slug, lang: stored }),
+      );
+      return;
+    }
+
+    // Post routes may not have translations; only redirect if the other language exists.
+    fetch(manifestPath)
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error("manifest"))))
+      .then((manifest) => {
+        const hasStored = Array.isArray(manifest)
+          ? manifest.some((p) => p?.slug === blogInfo.slug && p?.lang === stored)
+          : false;
+        if (hasStored) {
+          window.location.replace(buildBlogUrl({ slug: blogInfo.slug, lang: stored }));
+        } else {
+          setDisabled("Translation not available");
+        }
+      })
+      .catch(() => {
+        // If we can't confirm, don't redirect.
+      });
+  }
+
+  let lang = blogInfo.isBlog ? blogInfo.lang : (stored ?? getLangFromPath());
   apply(lang);
 
+  // For blog posts, disable toggle if the translation doesn't exist.
+  if (blogInfo.isBlog && blogInfo.slug) {
+    const other = blogInfo.lang === "en" ? "zh" : "en";
+    fetch(manifestPath)
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error("manifest"))))
+      .then((manifest) => {
+        const hasOther = Array.isArray(manifest)
+          ? manifest.some((p) => p?.slug === blogInfo.slug && p?.lang === other)
+          : false;
+        if (!hasOther) setDisabled("Translation not available");
+      })
+      .catch(() => {
+        // If we can't confirm, keep the toggle enabled.
+      });
+  }
+
   buttonEl.addEventListener("click", () => {
+    const info = getBlogRouteInfo();
+    if (info.isBlog) {
+      if (buttonEl.disabled) return;
+      const next = info.lang === "en" ? "zh" : "en";
+      writeStored(next);
+      window.location.assign(buildBlogUrl({ slug: info.slug, lang: next }));
+      return;
+    }
+
     lang = lang === "en" ? "zh" : "en";
     apply(lang);
   });

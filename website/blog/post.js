@@ -170,11 +170,3 @@ const main = async () => {
 };
 
 main();
-
-// Re-render the post when the existing top-right language toggle is clicked.
-const langBtn = document.querySelector(".nav__lang");
-if (langBtn) {
-  langBtn.addEventListener("click", () => {
-    setTimeout(main, 0);
-  });
-}
