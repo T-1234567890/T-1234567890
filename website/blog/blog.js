@@ -101,11 +101,13 @@ const renderIndex = () => {
         : "";
 
       return `
-        <a class="post-card" role="listitem" href="${href}">
-          <div class="post-card__title">${title}</div>
-          <div class="post-card__meta">${fmtDate(post.date, post.lang)}</div>
-          <p class="post-card__excerpt">${summary}</p>
-          ${tagsHtml}
+        <a class="blog-card-link" href="${href}">
+          <article class="post-card" role="listitem">
+            <h3 class="post-card__title">${title}</h3>
+            <div class="post-card__meta">${fmtDate(post.date, post.lang)}</div>
+            <p class="post-card__excerpt">${summary}</p>
+            ${tagsHtml}
+          </article>
         </a>
       `;
     })
