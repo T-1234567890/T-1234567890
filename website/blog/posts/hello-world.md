@@ -1,3 +1,12 @@
+---
+title: Hello World, Calmly
+date: 2026-02-10
+tags: [dev, notes]
+summary: What I learned about pacing side projects and keeping interfaces quiet.
+lang: en
+slug: hello-world
+---
+
 # Hello World, Calmly
 
 Shipping slow and steady beats the thrill of a late-night launch. Here’s how I keep side projects sustainable.

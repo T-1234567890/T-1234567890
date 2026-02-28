@@ -10,17 +10,17 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
     />
-    <link rel="icon" href="../../assets/logo.svg" type="image/svg+xml" />
-    <link rel="icon" href="../../assets/logo.png" type="image/png" />
-    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/logo.png" type="image/png" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
-  <body class="subpage" data-view="blog-post">
+  <body class="subpage" data-view="blog-post" data-slug="hello-world">
     <div class="bg" aria-hidden="true"></div>
 
     <header class="topbar">
       <nav class="nav" aria-label="Primary">
         <a class="nav__logo" href="/" aria-label="Home">
-          <img src="../../assets/logo.svg" alt="" width="28" height="28" />
+          <img src="/assets/logo.svg" alt="" width="28" height="28" />
         </a>
 
         <div class="nav__center">
@@ -37,8 +37,9 @@
       <div class="page-shell stack">
         <section class="page-header">
           <p class="eyebrow"><a href="/blog/" class="footer__link">Back to blog</a></p>
-          <h1 class="page-title" id="postTitle">Loading…</h1>
+          <h1 class="page-title" id="postTitle">Hello World, Calmly</h1>
           <div class="post-meta" id="postMeta">—</div>
+          <div class="btn-row" id="postTags" aria-label="Tags"></div>
         </section>
 
         <article id="postBody" class="post-body">
@@ -47,7 +48,7 @@
       </div>
     </main>
 
-    <script type="module" src="../blog.js"></script>
-    <script type="module" src="../../js/main.js"></script>
+    <script type="module" src="/blog/post.js"></script>
+    <script type="module" src="/js/main.js"></script>
   </body>
 </html>

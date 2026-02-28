@@ -893,6 +893,27 @@ body.subpage{
 }
 
 /* --- Blog --- */
+.blog-controls{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.blog-search{
+  flex: 1 1 280px;
+  max-width: 520px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(11,15,20,0.10);
+  background: rgba(255,255,255,0.82);
+  box-shadow: 0 12px 24px rgba(11,15,20,0.06);
+  font: inherit;
+  color: rgba(11,15,20,0.82);
+}
+.blog-search:focus-visible{
+  outline: 2px solid rgba(74,144,226,0.45);
+  outline-offset: 3px;
+}
 .blog-list{
   display:grid;
   gap: 14px;
