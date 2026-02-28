@@ -16,9 +16,9 @@ const I18N = {
     footer_line1: "© 2026 Tony. All rights reserved.",
     footer_line2: "This website uses cookies for basic functionality and analytics.",
     footer_privacy: "Privacy Policy",
-    blog_index_h1: "Notes on building calm products",
+    blog_index_h1: "Notes & Experiments",
     blog_index_lede:
-      "Markdown-only posts, no CMS. Each post lives beside the code so publishing stays lightweight and versioned.",
+      "Small thoughts about building quiet products, learning, and making things slowly.",
     blog_latest: "Latest posts",
     blog_search_label: "Search",
     blog_back: "Back to blog",
@@ -91,9 +91,8 @@ const I18N = {
     footer_line1: "© 2026 Tony。保留所有权利。",
     footer_line2: "本网站使用 Cookie 以支持基础功能与分析。",
     footer_privacy: "隐私政策",
-    blog_index_h1: "记录如何打造冷静的产品",
-    blog_index_lede:
-      "只用 Markdown 写作，不用 CMS。每篇文章与代码同库，发布保持轻量且可版本化。",
+    blog_index_h1: "笔记与实验",
+    blog_index_lede: "记录一些关于做产品、学习与慢慢创造的想法。",
     blog_latest: "最新文章",
     blog_search_label: "搜索",
     blog_back: "返回博客",

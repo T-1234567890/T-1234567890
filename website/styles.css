@@ -919,16 +919,23 @@ body.subpage{
   gap: 14px;
 }
 .post-card{
+  display:block;
   padding: 16px 16px 18px;
   border-radius: 14px;
   border: 1px solid rgba(11,15,20,0.08);
   background: rgba(255,255,255,0.82);
   box-shadow: 0 12px 24px rgba(11,15,20,0.06);
+  text-decoration:none;
+  color: inherit;
   transition: transform 180ms var(--ease), box-shadow 180ms var(--ease);
 }
 .post-card:hover{
   transform: translateY(-1px);
   box-shadow: 0 16px 34px rgba(11,15,20,0.10);
+}
+.post-card:focus-visible{
+  outline: 2px solid rgba(74,144,226,0.45);
+  outline-offset: 3px;
 }
 .post-card__title{
   display:inline-block;

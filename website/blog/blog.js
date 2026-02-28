@@ -11,8 +11,11 @@ const fmtDate = (dateStr, lang) => {
   });
 };
 
-const getActiveLang = () =>
-  document.documentElement?.dataset?.lang === "zh" ? "zh" : "en";
+const getActiveLang = () => {
+  const attr = document.documentElement?.dataset?.lang;
+  if (attr === "zh" || attr === "en") return attr;
+  return window.location.pathname.startsWith("/zh/") ? "zh" : "en";
+};
 
 const escapeHtml = (str) =>
   String(str)
@@ -23,6 +26,32 @@ const escapeHtml = (str) =>
     .replace(/'/g, "&#39;");
 
 const state = { posts: [], query: "" };
+
+const pickPostsForLang = (allPosts, lang) => {
+  // Group by slug; for each slug pick the current language if available,
+  // otherwise fall back to English, otherwise any.
+  const bySlug = new Map();
+  for (const p of allPosts) {
+    if (!p?.slug) continue;
+    const arr = bySlug.get(p.slug) ?? [];
+    arr.push(p);
+    bySlug.set(p.slug, arr);
+  }
+
+  const picked = [];
+  for (const [slug, arr] of bySlug.entries()) {
+    const best =
+      arr.find((p) => p.lang === lang) ??
+      arr.find((p) => p.lang === "en") ??
+      arr[0];
+    if (best) picked.push(best);
+  }
+
+  picked.sort((a, b) =>
+    a.date < b.date ? 1 : a.date > b.date ? -1 : a.slug.localeCompare(b.slug),
+  );
+  return picked;
+};
 
 const matchesQuery = (post, q) => {
   if (!q) return true;
@@ -44,9 +73,9 @@ const renderIndex = () => {
   const lang = getActiveLang();
   const q = state.query.trim();
 
-  const posts = state.posts
-    .filter((p) => (p.lang || "en") === lang)
-    .filter((p) => matchesQuery(p, q));
+  const posts = pickPostsForLang(state.posts, lang).filter((p) =>
+    matchesQuery(p, q),
+  );
 
   if (!state.posts.length) {
     listEl.innerHTML = '<p class="muted">No posts yet.</p>';
@@ -72,12 +101,12 @@ const renderIndex = () => {
         : "";
 
       return `
-        <article class="post-card" role="listitem">
-          <a class="post-card__title" href="${href}">${title}</a>
+        <a class="post-card" role="listitem" href="${href}">
+          <div class="post-card__title">${title}</div>
           <div class="post-card__meta">${fmtDate(post.date, post.lang)}</div>
           <p class="post-card__excerpt">${summary}</p>
           ${tagsHtml}
-        </article>
+        </a>
       `;
     })
     .join("");
@@ -114,10 +143,7 @@ const initSearch = () => {
 const initLangRerender = () => {
   const btn = document.querySelector(".nav__lang");
   if (!btn) return;
-  btn.addEventListener("click", () => {
-    // initLanguageToggle updates html[data-lang] inside its handler; re-render after.
-    setTimeout(renderIndex, 0);
-  });
+  // No-op on purpose: language toggle navigates between /blog/ and /zh/blog/.
 };
 
 loadManifest();
