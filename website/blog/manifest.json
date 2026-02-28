@@ -1,15 +1,30 @@
 [
   {
-    "title": "Hello World, Calmly",
-    "date": "2026-02-10",
+    "title": "Hello World",
+    "date": "2026-02-28",
     "tags": [
-      "dev",
-      "notes"
+      "hello world",
+      "notes",
+      "test"
     ],
     "summary": "What I learned about pacing side projects and keeping interfaces quiet.",
     "lang": "en",
     "slug": "hello-world",
-    "source": "/blog/posts/hello-world.md",
+    "source": "/blog/posts/hello-world.en.md",
+    "url": "/blog/hello-world/"
+  },
+  {
+    "title": "Hello World",
+    "date": "2026-02-28",
+    "tags": [
+      "hello world",
+      "notes",
+      "test"
+    ],
+    "summary": "What I learned about pacing side projects and keeping interfaces quiet.",
+    "lang": "zh",
+    "slug": "hello-world",
+    "source": "/blog/posts/hello-world.zh.md",
     "url": "/blog/hello-world/"
   }
 ]

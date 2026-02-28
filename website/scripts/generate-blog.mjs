@@ -179,25 +179,37 @@ const main = async () => {
     .sort();
 
   const posts = [];
-  const seenSlugs = new Set();
+  // Allow translated variants like: <slug>.en.md / <slug>.zh.md
+  // We treat (slug, lang) as the unique key.
+  const seenKeys = new Set();
 
   for (const filename of mdFiles) {
     const fullPath = path.join(POSTS_DIR, filename);
     const md = await fs.readFile(fullPath, "utf8");
 
     const { data } = parseFrontMatter(md, fullPath);
-    const fileSlug = path.basename(filename, ".md");
+    const stem = path.basename(filename, ".md"); // e.g. "hello-world", or "hello-world.en"
 
-    if (fileSlug !== data.slug) {
+    if (stem !== data.slug) {
+      const parts = stem.split(".");
+      const okTranslated =
+        parts.length === 2 && parts[0] === data.slug && parts[1] === data.lang;
+
+      if (!okTranslated) {
+        throw new Error(
+          `Filename "${filename}" does not match slug/lang from front-matter.\n` +
+            `Expected "${data.slug}.md" or "${data.slug}.${data.lang}.md".`,
+        );
+      }
+    }
+
+    const key = `${data.slug}:${data.lang}`;
+    if (seenKeys.has(key)) {
       throw new Error(
-        `Filename "${filename}" must match slug "${data.slug}" (expected ${data.slug}.md)`,
+        `Duplicate post for slug "${data.slug}" and lang "${data.lang}" found.`,
       );
     }
-
-    if (seenSlugs.has(data.slug)) {
-      throw new Error(`Duplicate slug "${data.slug}" found.`);
-    }
-    seenSlugs.add(data.slug);
+    seenKeys.add(key);
 
     posts.push({
       title: data.title,
@@ -206,7 +218,7 @@ const main = async () => {
       summary: data.summary,
       lang: data.lang,
       slug: data.slug,
-      source: `/blog/posts/${data.slug}.md`,
+      source: `/blog/posts/${filename}`,
       url: `/blog/${data.slug}/`,
     });
   }
@@ -261,4 +273,3 @@ main().catch((err) => {
   console.error(err?.stack || String(err));
   process.exit(1);
 });
-

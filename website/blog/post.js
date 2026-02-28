@@ -1,5 +1,8 @@
 const manifestPath = "/blog/manifest.json";
 
+const getActiveLang = () =>
+  document.documentElement?.dataset?.lang === "zh" ? "zh" : "en";
+
 const escapeHtml = (str) =>
   String(str)
     .replace(/&/g, "&amp;")
@@ -139,7 +142,10 @@ const main = async () => {
     if (!manifestRes.ok) throw new Error("manifest fetch failed");
     const manifest = await manifestRes.json();
 
-    const meta = manifest.find((p) => p.slug === slug);
+    const lang = getActiveLang();
+    const meta =
+      manifest.find((p) => p.slug === slug && p.lang === lang) ??
+      manifest.find((p) => p.slug === slug);
     if (!meta) {
       bodyEl.innerHTML = '<p class="muted">Post not found.</p>';
       return;
@@ -165,3 +171,10 @@ const main = async () => {
 
 main();
 
+// Re-render the post when the existing top-right language toggle is clicked.
+const langBtn = document.querySelector(".nav__lang");
+if (langBtn) {
+  langBtn.addEventListener("click", () => {
+    setTimeout(main, 0);
+  });
+}

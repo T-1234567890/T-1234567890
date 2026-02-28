@@ -35,6 +35,7 @@ jobs:
 
       - name: Commit and push changes
         run: |
+          shopt -s nullglob
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
@@ -47,4 +48,3 @@ jobs:
 
           git commit -m "chore(blog): update manifest and post pages"
           git push
-

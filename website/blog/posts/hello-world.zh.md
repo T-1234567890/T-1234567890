@@ -1,7 +1,7 @@
 ---
 title: Hello World
 date: 2026-02-28
-tags: [hello world, notes, test]
+tags: [hello world, notes, testing]
 summary: What I learned about pacing side projects and keeping interfaces quiet.
 lang: zh
 slug: hello-world
