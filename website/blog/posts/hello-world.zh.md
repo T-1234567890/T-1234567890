@@ -1,5 +1,5 @@
 ---
-title: Hello World
+title: 你好，世界
 date: 2026-02-28
 tags: [hello world, notes]
 summary: What I learned about pacing side projects and keeping interfaces quiet.
