@@ -1,6 +1,6 @@
 [
   {
-    "title": "Building Terminal Info, a Rust CLI Toolbox with a Plugin Registry",
+    "title": "Building Terminal Info: A Rust CLI Toolbox with a Plugin Ecosystem",
     "date": "2026-03-15",
     "tags": [
       "rust",
@@ -15,7 +15,7 @@
     "url": "/blog/terminal-info/"
   },
   {
-    "title": "构建 Terminal Info：一个带插件注册表的 Rust CLI 工具箱",
+    "title": "Terminal Info：一个带插件生态的 Rust CLI 工具箱",
     "date": "2026-03-15",
     "tags": [
       "rust",
@@ -23,7 +23,7 @@
       "插件",
       "开发者工具"
     ],
-    "summary": "记录我为什么做 Terminal Info、基于注册表的插件系统如何工作，以及我希望它成长为什么样的开发者工具箱。",
+    "summary": "为什么我要做 Terminal Info、基于注册的插件系统如何工作，以及我希望它成长为什么样的开发者工具箱。",
     "lang": "zh",
     "slug": "terminal-info",
     "source": "/blog/posts/terminal-info.zh.md",
