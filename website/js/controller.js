@@ -31,6 +31,8 @@ const I18N = {
     about_focus_3: "Creative media & design",
     about_focus_4: "Photography",
     projects_lede: "Things I build and experiment with.",
+    project_tinfo_desc:
+      "A fast Rust-powered terminal information hub and all-in-one developer toolbox.",
     project_pomodoro_desc: "Minimal focus timer built for macOS.",
     project_external_hint: "Opens external site",
     privacy_eyebrow: "Privacy",
@@ -105,6 +107,8 @@ const I18N = {
     about_focus_3: "创意媒体与设计",
     about_focus_4: "摄影",
     projects_lede: "我正在构建与实验的一些东西。",
+    project_tinfo_desc:
+      "一个由 Rust 驱动的快速终端信息中心，也是一个一体化的开发者工具箱。",
     project_pomodoro_desc: "为 macOS 打造的极简专注计时器。",
     project_external_hint: "打开外部网站",
     privacy_eyebrow: "隐私",
