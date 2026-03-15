@@ -43,3 +43,7 @@ out/
 # --- Python ---
 __pycache__/
 *.py[cod]
+
+# --- Other ---
+/website/blog/terminal-info/index.html
+/website/zh/blog/terminal-info/index.html
