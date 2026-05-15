@@ -185,6 +185,69 @@ const initPrivacyModal = () => {
   });
 };
 
+const initDraggableTechCloud = () => {
+  const cloud = document.querySelector(".tech-cloud");
+  if (!cloud) return;
+
+  for (const chip of cloud.querySelectorAll(".tech-chip")) {
+    const cycleIcons = chip.dataset.cycleIcons?.split("|").filter(Boolean) ?? [];
+    if (cycleIcons.length) {
+      chip.dataset.cycleIndex = "0";
+      chip.addEventListener("click", () => {
+        if (chip.dataset.dragMoved === "true") return;
+        const img = chip.querySelector(".tech-chip__icon img");
+        if (!img) return;
+        const nextIndex = (Number(chip.dataset.cycleIndex ?? "0") + 1) % cycleIcons.length;
+        chip.dataset.cycleIndex = String(nextIndex);
+        img.src = cycleIcons[nextIndex];
+      });
+    }
+
+    chip.addEventListener("pointerdown", (event) => {
+      if (event.button !== 0 && event.pointerType === "mouse") return;
+
+      const cloudRect = cloud.getBoundingClientRect();
+      const chipRect = chip.getBoundingClientRect();
+      const offsetX = event.clientX - chipRect.left;
+      const offsetY = event.clientY - chipRect.top;
+      const startX = event.clientX;
+      const startY = event.clientY;
+      let moved = false;
+
+      chip.classList.add("is-dragging");
+      chip.setPointerCapture?.(event.pointerId);
+
+      const moveTo = (clientX, clientY) => {
+        if (Math.hypot(clientX - startX, clientY - startY) > 4) moved = true;
+        const maxX = Math.max(0, cloudRect.width - chip.offsetWidth);
+        const maxY = Math.max(0, cloudRect.height - chip.offsetHeight);
+        const nextX = Math.min(Math.max(clientX - cloudRect.left - offsetX, 0), maxX);
+        const nextY = Math.min(Math.max(clientY - cloudRect.top - offsetY, 0), maxY);
+        chip.style.left = `${nextX}px`;
+        chip.style.top = `${nextY}px`;
+      };
+
+      const onMove = (moveEvent) => moveTo(moveEvent.clientX, moveEvent.clientY);
+      const onUp = () => {
+        chip.classList.remove("is-dragging");
+        chip.dataset.dragMoved = moved ? "true" : "false";
+        chip.removeEventListener("pointermove", onMove);
+        chip.removeEventListener("pointerup", onUp);
+        chip.removeEventListener("pointercancel", onUp);
+        window.setTimeout(() => {
+          delete chip.dataset.dragMoved;
+        }, 120);
+      };
+
+      chip.addEventListener("pointermove", onMove);
+      chip.addEventListener("pointerup", onUp);
+      chip.addEventListener("pointercancel", onUp);
+      moveTo(event.clientX, event.clientY);
+    });
+  }
+};
+
 initReveal();
 initDiscordCopy();
 initPrivacyModal();
+initDraggableTechCloud();

@@ -1,5 +1,37 @@
 [
   {
+    "title": "How a Simple Pomodoro Experiment Became Orchestrana",
+    "date": "2026-05-16",
+    "tags": [
+      "orchestrana",
+      "productivity",
+      "workflow",
+      "macos",
+      "development"
+    ],
+    "summary": "How a small AI-assisted Pomodoro experiment slowly evolved into a native macOS execution-focused workflow system.",
+    "lang": "en",
+    "slug": "how-a-simple-pomodoro-experiment-became-orchestrana",
+    "source": "/blog/posts/how-a-simple-pomodoro-experiment-became-orchestrana.en.md",
+    "url": "/blog/how-a-simple-pomodoro-experiment-became-orchestrana/"
+  },
+  {
+    "title": "一个简单的番茄钟实验，为什么最后变成了 Orchestrana",
+    "date": "2026-05-16",
+    "tags": [
+      "orchestrana",
+      "productivity",
+      "workflow",
+      "macos",
+      "development"
+    ],
+    "summary": "一个原本只是测试 AI 辅助开发能力的 Pomodoro 小实验，是如何逐渐演化成一个原生 macOS 工作流与执行系统的。",
+    "lang": "zh",
+    "slug": "how-a-simple-pomodoro-experiment-became-orchestrana",
+    "source": "/blog/posts/how-a-simple-pomodoro-experiment-became-orchestrana.zh.md",
+    "url": "/zh/blog/how-a-simple-pomodoro-experiment-became-orchestrana/"
+  },
+  {
     "title": "Building Terminal Info: A Rust CLI Toolbox with a Plugin Ecosystem",
     "date": "2026-03-15",
     "tags": [

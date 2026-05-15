@@ -1,31 +1,31 @@
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang="zh-Hans" data-lang="zh">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Blog — 1234567890</title>
+    <title>一个简单的番茄钟实验，为什么最后变成了 Orchestrana — Blog</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
     />
-    <link rel="icon" href="../assets/logo.svg" type="image/svg+xml" />
-    <link rel="icon" href="../assets/logo.png" type="image/png" />
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/logo.png" type="image/png" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
-  <body class="subpage" data-view="blog-index">
+  <body class="subpage" data-view="blog-post" data-slug="how-a-simple-pomodoro-experiment-became-orchestrana">
     <div class="bg" aria-hidden="true"></div>
 
     <header class="topbar">
       <nav class="nav" aria-label="Primary">
         <a class="nav__logo" href="/" aria-label="Home">
-          <img src="../assets/icon2.png" alt="" width="28" height="28" />
+          <img src="/assets/icon2.png" alt="" width="28" height="28" />
         </a>
 
         <div class="nav__center">
           <a class="nav__link" href="/about/" data-i18n="nav_about">About</a>
-          <a class="nav__link" href="/blog/" aria-current="page" data-i18n="nav_blog">Blog</a>
+          <a class="nav__link" href="/zh/blog/" aria-current="page" data-i18n="nav_blog">Blog</a>
           <a class="nav__link" href="/projects/" data-i18n="nav_projects">Projects</a>
         </div>
 
@@ -36,30 +36,15 @@
     <main class="page">
       <div class="page-shell stack">
         <section class="page-header">
-          <p class="eyebrow" data-i18n="blog_title">Blog</p>
-          <h1 class="page-title" data-i18n="blog_index_h1">Notes &amp; Experiments</h1>
-          <p class="page-lede">
-            <span data-i18n="blog_index_lede">Small thoughts about building quiet products, learning, and making things slowly.</span>
-          </p>
+          <p class="eyebrow"><a href="/zh/blog/" class="footer__link" data-i18n="blog_back">Back to blog</a></p>
+          <h1 class="page-title" id="postTitle">一个简单的番茄钟实验，为什么最后变成了 Orchestrana</h1>
+          <div class="post-meta" id="postMeta">—</div>
+          <div class="btn-row" id="postTags" aria-label="Tags"></div>
         </section>
 
-        <section class="surface-card stack">
-          <h2 class="section-title" data-i18n="blog_latest">Latest posts</h2>
-          <div class="blog-controls">
-            <label class="muted" for="blogSearch" data-i18n="blog_search_label">Search</label>
-            <input
-              id="blogSearch"
-              class="blog-search"
-              type="search"
-              placeholder="Search title or tags…"
-              aria-label="Search blog posts"
-              autocomplete="off"
-            />
-          </div>
-          <div id="blogList" class="blog-list" role="list">
-            <p class="muted">Loading posts…</p>
-          </div>
-        </section>
+        <article id="postBody" class="post-body">
+          <p class="muted">Loading post…</p>
+        </article>
       </div>
     </main>
 
@@ -77,7 +62,7 @@
       </div>
     </footer>
 
-    <script type="module" src="../js/main.js"></script>
-    <script type="module" src="./blog.js"></script>
+    <script type="module" src="/blog/post.js"></script>
+    <script type="module" src="/js/main.js"></script>
   </body>
 </html>

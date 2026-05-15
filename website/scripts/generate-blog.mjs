@@ -139,7 +139,7 @@ const renderPostIndexHtml = (post) => {
     <header class="topbar">
       <nav class="nav" aria-label="Primary">
         <a class="nav__logo" href="/" aria-label="Home">
-          <img src="/assets/logo.svg" alt="" width="28" height="28" />
+          <img src="/assets/icon2.png" alt="" width="28" height="28" />
         </a>
 
         <div class="nav__center">
@@ -210,7 +210,7 @@ const renderZhBlogIndexHtml = () => `<!doctype html>
     <header class="topbar">
       <nav class="nav" aria-label="Primary">
         <a class="nav__logo" href="/" aria-label="Home">
-          <img src="/assets/logo.svg" alt="" width="28" height="28" />
+          <img src="/assets/icon2.png" alt="" width="28" height="28" />
         </a>
 
         <div class="nav__center">
