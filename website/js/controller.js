@@ -33,6 +33,10 @@ const I18N = {
       "A local-first data flow system for everything you copy on your Mac.",
     project_orchestrana_desc:
       "A calm open-source focus app for macOS, combining a clean timer, focus flow sessions, and task awareness.",
+    project_maneuver_desc:
+      "A native macOS workspace for building, monitoring, and debugging GitHub Actions workflows.",
+    project_oci_desc:
+      "An open, deterministic color identity standard for digital design, based on stable OKLCH and OKLab values.",
     project_external_hint: "Opens external site",
     privacy_eyebrow: "Privacy",
     privacy_last_updated: "Last updated: Feb 27, 2026",
@@ -108,6 +112,10 @@ const I18N = {
       "一个本地优先的 macOS 数据流系统，用来管理你在 Mac 上复制的一切。",
     project_orchestrana_desc:
       "一个安静的开源 macOS 专注应用，结合简洁计时器、专注流会话和任务感知。",
+    project_maneuver_desc:
+      "一个原生 macOS 工作区，用来构建、监控和调试 GitHub Actions 工作流。",
+    project_oci_desc:
+      "一个面向数字设计的开放、确定性颜色身份标准，基于稳定的 OKLCH 与 OKLab 数值。",
     project_external_hint: "打开外部网站",
     privacy_eyebrow: "隐私",
     privacy_last_updated: "最后更新：2026-02-27",
