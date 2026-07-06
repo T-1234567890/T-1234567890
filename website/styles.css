@@ -576,6 +576,40 @@ body{
 .linkBtn--button{
   appearance:none;
 }
+.linkBtn--wide{
+  justify-content:center;
+  margin-top: 12px;
+  width: 100%;
+}
+.discord-community-btn{
+  max-width: none;
+  margin: 24px auto 0;
+}
+.discord-community-btn::after{
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  width: min(520px, calc(100vw - 48px));
+  transform: translate3d(-50%, 6px, 0);
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(11,15,20,0.10);
+  background: rgba(255,255,255,0.92);
+  color: rgba(11,15,20,0.70);
+  box-shadow: 0 16px 34px rgba(11,15,20,0.10);
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms var(--ease), transform 180ms var(--ease);
+}
+.discord-community-btn:hover::after,
+.discord-community-btn:focus-visible::after{
+  opacity: 1;
+  transform: translate3d(-50%, 0, 0);
+}
 .linkBtn__icon{
   width: 26px;
   height: 26px;

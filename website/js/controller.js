@@ -9,6 +9,7 @@ const I18N = {
     about_body: "This is a landing page, not a portfolio. One page. One vibe.",
     links_title: "Links",
     links_sub: "Find me around the internet.",
+    links_discord_join: "Join Discord Community",
     projects_title: "Projects",
     projects_body: "Keep it minimal. A single highlight is enough.",
     blog_title: "Blog",
@@ -33,6 +34,8 @@ const I18N = {
       "A local-first data flow system for everything you copy on your Mac.",
     project_orchestrana_desc:
       "A calm open-source focus app for macOS, combining a clean timer, focus flow sessions, and task awareness.",
+    project_musedial_desc:
+      "A tactile iPhone music player with a glass dial, immersive album art, Apple Music, local audio, streams, and recognition.",
     project_maneuver_desc:
       "A native macOS workspace for building, monitoring, and debugging GitHub Actions workflows.",
     project_oci_desc:
@@ -89,6 +92,7 @@ const I18N = {
     about_body: "这里不是作品集，而是一页式着陆页：一个页面，一个氛围。",
     links_title: "链接",
     links_sub: "你可以在这些地方找到我。",
+    links_discord_join: "加入 Discord 社区",
     projects_title: "项目",
     projects_body: "保持极简：一个重点就足够。",
     blog_title: "博客",
@@ -112,6 +116,8 @@ const I18N = {
       "一个本地优先的 macOS 数据流系统，用来管理你在 Mac 上复制的一切。",
     project_orchestrana_desc:
       "一个安静的开源 macOS 专注应用，结合简洁计时器、专注流会话和任务感知。",
+    project_musedial_desc:
+      "一个触感化的 iPhone 音乐播放器，包含玻璃拨盘、沉浸式专辑封面、Apple Music、本地音频、流媒体和音乐识别。",
     project_maneuver_desc:
       "一个原生 macOS 工作区，用来构建、监控和调试 GitHub Actions 工作流。",
     project_oci_desc:
