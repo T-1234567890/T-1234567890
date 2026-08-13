@@ -1,13 +1,10 @@
 ---
 title: How a Simple Pomodoro Experiment Became Orchestrana
 date: 2026-05-16
-tags: [orchestrana, productivity, workflow, macos, development]
 summary: How a small AI-assisted Pomodoro experiment slowly evolved into a native macOS execution-focused workflow system.
 lang: en
 slug: how-a-simple-pomodoro-experiment-became-orchestrana
 ---
-
-# How a Simple Pomodoro Experiment Became Orchestrana
 
 Orchestrana did not begin as a serious startup idea.
 

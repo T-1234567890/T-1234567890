@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Projects — 1234567890</title>
+    <title>Projects - 1234567890.dev</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,9 +13,12 @@
     <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
     <link rel="icon" href="/assets/logo.png" type="image/png" />
     <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/js/react-app.css" />
+    <link rel="stylesheet" href="/js/pixel-blast-background.css" />
   </head>
-  <body class="subpage projects-page">
+  <body class="subpage projects-page pixel-blast-page">
     <div class="bg" aria-hidden="true"></div>
+    <div id="page-pixel-blast" class="page-pixel-blast" aria-hidden="true"></div>
 
     <header class="topbar">
       <nav class="nav" aria-label="Primary">
@@ -33,131 +36,150 @@
       </nav>
     </header>
 
+    <div class="nav-trigger" id="nav-trigger" aria-hidden="true"></div>
+
     <main class="page">
       <div class="page-shell stack">
         <section class="page-header">
-          <p class="eyebrow" data-i18n="projects_title">Projects</p>
           <h1 class="page-title" data-i18n="projects_title">Projects</h1>
-          <p class="page-lede" data-i18n="projects_lede">Things I build and experiment with.</p>
+          <p class="page-lede" data-i18n="projects_lede">A selection of things I've built.</p>
         </section>
 
-        <section class="projects-grid" aria-label="Projects list">
+        <section class="projects-grid" id="projects-grid-root" aria-label="Projects list">
           <a
             class="project-card project-card--external"
             href="https://tinfo.1234567890.dev/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Terminal Info (opens external site)"
+            aria-label="Terminal Info, open source project"
           >
             <div class="project-card__icon" aria-hidden="true">
-              <img src="/assets/logo.svg" alt="" />
+              <span class="project-card__text-icon">tinfo</span>
             </div>
+            <span class="project-card__oss-badge" aria-hidden="true"><span>OSS<sup>*</sup></span></span>
             <div class="project-card__meta">
-              <h2 class="project-card__title">Terminal Info (tinfo)</h2>
+              <h2 class="project-card__title">Terminal Info</h2>
               <p class="project-card__desc" data-i18n="project_tinfo_desc">
-                A fast Rust-powered terminal information hub and all-in-one developer toolbox.
+                A terminal toolbox built around a growing plugin ecosystem.
               </p>
-              <span class="project-card__hint" aria-hidden="true" data-i18n="project_external_hint">Opens external site</span>
             </div>
+            <span class="project-card__arrow" aria-hidden="true">↗</span>
           </a>
           <a
             class="project-card project-card--external"
             href="https://fluxclip.app/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="FluxClip (opens external site)"
+            aria-label="FluxClip"
           >
             <div class="project-card__icon" aria-hidden="true">
               <img src="/assets/FluxClip%20app%20icon%201-iOS-Default-1024x1024@1x.png" alt="" />
             </div>
             <div class="project-card__meta">
               <h2 class="project-card__title">FluxClip</h2>
-              <p class="project-card__desc" data-i18n="project_fluxclip_desc">A local-first data flow system for everything you copy on your Mac.</p>
-              <span class="project-card__hint" aria-hidden="true" data-i18n="project_external_hint">Opens external site</span>
+              <p class="project-card__desc" data-i18n="project_fluxclip_desc">A clipboard workspace built around context, data flow, and workflow.</p>
             </div>
+            <span class="project-card__arrow" aria-hidden="true">↗</span>
           </a>
           <a
             class="project-card project-card--external"
             href="https://orchestrana.app/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Orchestrana (opens external site)"
+            aria-label="Orchestrana, open source project"
           >
             <div class="project-card__icon" aria-hidden="true">
               <img src="/assets/Orchestrana%20icon%201-iOS-Default-1024x1024@1x.png" alt="" />
             </div>
+            <span class="project-card__oss-badge" aria-hidden="true"><span>OSS<sup>*</sup></span></span>
             <div class="project-card__meta">
               <h2 class="project-card__title">Orchestrana</h2>
-              <p class="project-card__desc" data-i18n="project_orchestrana_desc">A calm open-source focus app for macOS, combining a clean timer, focus flow sessions, and task awareness.</p>
-              <span class="project-card__hint" aria-hidden="true" data-i18n="project_external_hint">Opens external site</span>
+              <p class="project-card__desc" data-i18n="project_orchestrana_desc">Plan. Focus. Done.</p>
             </div>
+            <span class="project-card__arrow" aria-hidden="true">↗</span>
           </a>
           <a
             class="project-card project-card--external"
             href="https://musedial.1234567890.dev/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="MuseDial (opens external site)"
+            aria-label="MuseDial"
           >
             <div class="project-card__icon" aria-hidden="true">
               <img src="/assets/musedial-icon.png" alt="" />
             </div>
             <div class="project-card__meta">
               <h2 class="project-card__title">MuseDial</h2>
-              <p class="project-card__desc" data-i18n="project_musedial_desc">A tactile iPhone music player with a glass dial, immersive album art, Apple Music, local audio, streams, and recognition.</p>
-              <span class="project-card__hint" aria-hidden="true" data-i18n="project_external_hint">Opens external site</span>
+              <p class="project-card__desc" data-i18n="project_musedial_desc">Retro, reimagined.</p>
             </div>
+            <span class="project-card__arrow" aria-hidden="true">↗</span>
           </a>
           <a
             class="project-card project-card--external"
             href="https://getmaneuver.com/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Maneuver (opens external site)"
+            aria-label="Maneuver"
           >
             <div class="project-card__icon" aria-hidden="true">
               <img src="/assets/maneuver-icon.png" alt="" />
             </div>
             <div class="project-card__meta">
               <h2 class="project-card__title">Maneuver</h2>
-              <p class="project-card__desc" data-i18n="project_maneuver_desc">A native macOS workspace for building, monitoring, and debugging GitHub Actions workflows.</p>
-              <span class="project-card__hint" aria-hidden="true" data-i18n="project_external_hint">Opens external site</span>
+              <p class="project-card__desc" data-i18n="project_maneuver_desc">A native macOS workspace for GitHub Actions, with a built-in GitHub inbox.</p>
             </div>
+            <span class="project-card__arrow" aria-hidden="true">↗</span>
           </a>
           <a
             class="project-card project-card--external"
             href="https://github.com/T-1234567890/open-chroma-index"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Open Chroma Index (opens external site)"
+            aria-label="Open Chroma Index, open source project"
           >
             <div class="project-card__icon" aria-hidden="true">
               <span class="project-card__text-icon">OCI</span>
             </div>
+            <span class="project-card__oss-badge" aria-hidden="true"><span>OSS<sup>*</sup></span></span>
             <div class="project-card__meta">
               <h2 class="project-card__title">Open Chroma Index</h2>
-              <p class="project-card__desc" data-i18n="project_oci_desc">An open, deterministic color identity standard for digital design, based on stable OKLCH and OKLab values.</p>
-              <span class="project-card__hint" aria-hidden="true" data-i18n="project_external_hint">Opens external site</span>
+              <p class="project-card__desc" data-i18n="project_oci_desc">A deterministic digital color standard for consistent color identity.</p>
             </div>
+            <span class="project-card__arrow" aria-hidden="true">↗</span>
           </a>
         </section>
       </div>
     </main>
 
+    <aside class="projects-license-note" aria-label="Open-source license clarification">
+      <p class="projects-license-note__text">
+        * Open-source projects shown above: Terminal Info — Apache License 2.0; Open Chroma Index —
+        Apache License 2.0; Orchestrana — MIT License for the open-source client. Official hosted
+        services and Orchestrana branding are subject to
+        <a href="https://github.com/T-1234567890/orchestrana-app/blob/main/TERMS.md" target="_blank" rel="noopener noreferrer">TERMS.md</a>.
+        Some products and projects shown on this page may also be subject to their respective Privacy
+        Policies, Terms of Service, End User License Agreements (EULAs), and other applicable terms.
+      </p>
+    </aside>
+
     <footer class="footer reveal" id="siteFooter">
       <div class="footer__inner footer__inner--simple">
         <div class="footer__line" data-i18n="footer_line1">
-          © 2026 Tony. All rights reserved.
+          © 2026 Tony Hu. All rights reserved.
         </div>
         <div class="footer__tiny" data-i18n="footer_line2">
           This website uses cookies for basic functionality and analytics.
         </div>
         <div class="footer__line">
           <a class="footer__link" href="/privacy/" data-i18n="footer_privacy">Privacy Policy</a>
+          <span class="footer__separator" aria-hidden="true">·</span>
+          <a class="footer__link" href="/legal-notices/" data-i18n="footer_legal_notices">Legal Notices</a>
         </div>
       </div>
     </footer>
 
     <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/react-app.js"></script>
+    <script type="module" src="/js/pixel-blast-background.js"></script>
   </body>
 </html>

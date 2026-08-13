@@ -1,13 +1,10 @@
 ---
 title: 一个简单的番茄钟实验，为什么最后变成了 Orchestrana
 date: 2026-05-16
-tags: [orchestrana, productivity, workflow, macos, development]
 summary: 一个原本只是测试 AI 辅助开发能力的 Pomodoro 小实验，是如何逐渐演化成一个原生 macOS 工作流与执行系统的。
 lang: zh
 slug: how-a-simple-pomodoro-experiment-became-orchestrana
 ---
-
-# 一个简单的番茄钟实验，为什么最后变成了 Orchestrana
 
 Orchestrana 一开始并不是一个正式的创业项目。
 

@@ -1,13 +1,10 @@
 ---
 title: Building Terminal Info: A Rust CLI Toolbox with a Plugin Ecosystem
 date: 2026-03-15
-tags: [rust, cli, plugins, developer-tools]
 summary: Why I built Terminal Info, how the registry-based plugin system works, and what kind of developer toolbox I want it to become.
 lang: en
 slug: terminal-info
 ---
-
-# Building Terminal Info
 
 Terminal Info (`tinfo`) is an open-source Rust CLI project I started as both a terminal information hub and an extensible developer toolbox.
 
@@ -19,7 +16,7 @@ This post explains why I built Terminal Info, what problems it attempts to solve
 
 ---
 
-# Why I Built This
+## Why I Built This
 
 I have always liked terminal tools that do one thing well. Tools like `ripgrep`, `bat`, or `htop` are great examples of focused utilities.
 
@@ -45,7 +42,7 @@ Rust felt like the right choice for this type of tool. It offers strong performa
 
 ---
 
-# What Terminal Info Does
+## What Terminal Info Does
 
 Terminal Info is designed as an **all-in-one developer toolbox**.
 
@@ -66,7 +63,7 @@ The goal is not to replace specialized tools. Instead, Terminal Info acts as a *
 
 ---
 
-# The Plugin Platform
+## The Plugin Platform
 
 The most important part of Terminal Info is its plugin architecture.
 
@@ -86,7 +83,7 @@ It also allows plugin authors to maintain full control over their projects witho
 
 ---
 
-# Server Mode
+## Server Mode
 
 Another feature being explored is **server mode**, which adapts Terminal Info for monitoring environments.
 
@@ -103,7 +100,7 @@ The goal is to make Terminal Info useful not only for local workflows but also f
 
 ---
 
-# The Long-Term Vision
+## The Long-Term Vision
 
 Terminal Info is still a new project, and most of the ecosystem does not exist yet.
 
@@ -113,7 +110,7 @@ If the plugin ecosystem grows, the project could evolve into a shared toolbox ma
 
 ---
 
-# Getting Started
+## Getting Started
 
 If you are interested in trying Terminal Info, the project is available on GitHub:
 

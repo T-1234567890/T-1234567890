@@ -20,24 +20,6 @@ const stripQuotes = (v) => {
   return s;
 };
 
-const parseTags = (raw) => {
-  const s = raw.trim();
-  if (!s) return [];
-
-  // Expect: [a, b]
-  if (s.startsWith("[") && s.endsWith("]")) {
-    const inner = s.slice(1, -1).trim();
-    if (!inner) return [];
-    return inner
-      .split(",")
-      .map((t) => stripQuotes(t.trim()))
-      .filter(Boolean);
-  }
-
-  // Allow single tag string as fallback.
-  return [stripQuotes(s)].filter(Boolean);
-};
-
 const parseFrontMatter = (md, filePathForErrors) => {
   const text = md.replace(/\r\n?/g, "\n");
   if (!text.startsWith("---\n")) {
@@ -71,8 +53,7 @@ const parseFrontMatter = (md, filePathForErrors) => {
     const key = trimmed.slice(0, idx).trim();
     const rawVal = trimmed.slice(idx + 1).trim();
 
-    if (key === "tags") data.tags = parseTags(rawVal);
-    else data[key] = stripQuotes(rawVal);
+    data[key] = stripQuotes(rawVal);
   }
 
   for (const k of ["title", "date", "summary", "lang", "slug"]) {
@@ -98,8 +79,6 @@ const parseFrontMatter = (md, filePathForErrors) => {
     );
   }
 
-  if (!Array.isArray(data.tags)) data.tags = [];
-
   return { data, body };
 };
 
@@ -113,16 +92,20 @@ const escapeHtml = (s) =>
 
 const renderPostIndexHtml = (post) => {
   const safeTitle = escapeHtml(post.title);
-  const htmlLang = post.lang === "zh" ? "zh-Hans" : "en";
-  const blogHref = post.lang === "zh" ? "/zh/blog/" : "/blog/";
-  const aboutHref = "/about/";
-  const projectsHref = "/projects/";
+  const isZh = post.lang === "zh";
+  const htmlLang = isZh ? "zh-Hans" : "en";
+  const homeHref = isZh ? "/zh/" : "/";
+  const blogHref = isZh ? "/zh/blog/" : "/blog/";
+  const aboutHref = isZh ? "/zh/about/" : "/about/";
+  const projectsHref = isZh ? "/zh/projects/" : "/projects/";
+  const privacyHref = isZh ? "/zh/privacy/" : "/privacy/";
+  const legalNoticesHref = isZh ? "/zh/legal-notices/" : "/legal-notices/";
   return `<!doctype html>
 <html lang="${htmlLang}" data-lang="${post.lang}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>${safeTitle} — Blog</title>
+    <title>${safeTitle} - Blog</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -138,7 +121,7 @@ const renderPostIndexHtml = (post) => {
 
     <header class="topbar">
       <nav class="nav" aria-label="Primary">
-        <a class="nav__logo" href="/" aria-label="Home">
+        <a class="nav__logo" href="${homeHref}" aria-label="Home">
           <img src="/assets/icon2.png" alt="" width="28" height="28" />
         </a>
 
@@ -148,7 +131,7 @@ const renderPostIndexHtml = (post) => {
           <a class="nav__link" href="${projectsHref}" data-i18n="nav_projects">Projects</a>
         </div>
 
-        <button class="nav__lang" type="button" aria-pressed="false">中文</button>
+        <button class="nav__lang" type="button" aria-pressed="${isZh}">${isZh ? "EN" : "中文"}</button>
       </nav>
     </header>
 
@@ -158,7 +141,6 @@ const renderPostIndexHtml = (post) => {
           <p class="eyebrow"><a href="${blogHref}" class="footer__link" data-i18n="blog_back">Back to blog</a></p>
           <h1 class="page-title" id="postTitle">${safeTitle}</h1>
           <div class="post-meta" id="postMeta">—</div>
-          <div class="btn-row" id="postTags" aria-label="Tags"></div>
         </section>
 
         <article id="postBody" class="post-body">
@@ -170,18 +152,20 @@ const renderPostIndexHtml = (post) => {
     <footer class="footer reveal" id="siteFooter">
       <div class="footer__inner footer__inner--simple">
         <div class="footer__line" data-i18n="footer_line1">
-          © 2026 Tony. All rights reserved.
+          © 2026 Tony Hu. All rights reserved.
         </div>
         <div class="footer__tiny" data-i18n="footer_line2">
           This website uses cookies for basic functionality and analytics.
         </div>
         <div class="footer__line">
-          <a class="footer__link" href="/privacy/" data-i18n="footer_privacy">Privacy Policy</a>
+          <a class="footer__link" href="${privacyHref}" data-i18n="footer_privacy">Privacy Policy</a>
+          <span class="footer__separator" aria-hidden="true">·</span>
+          <a class="footer__link" href="${legalNoticesHref}" data-i18n="footer_legal_notices">${isZh ? "法律声明" : "Legal Notices"}</a>
         </div>
       </div>
     </footer>
 
-    <script type="module" src="/blog/post.js"></script>
+    <script type="module" src="/blog/post-renderer.js"></script>
     <script type="module" src="/js/main.js"></script>
   </body>
 </html>
@@ -193,7 +177,7 @@ const renderZhBlogIndexHtml = () => `<!doctype html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Blog — 1234567890</title>
+    <title>Blog - 1234567890.dev</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -209,46 +193,54 @@ const renderZhBlogIndexHtml = () => `<!doctype html>
 
     <header class="topbar">
       <nav class="nav" aria-label="Primary">
-        <a class="nav__logo" href="/" aria-label="Home">
+        <a class="nav__logo" href="/zh/" aria-label="Home">
           <img src="/assets/icon2.png" alt="" width="28" height="28" />
         </a>
 
         <div class="nav__center">
-          <a class="nav__link" href="/about/" data-i18n="nav_about">About</a>
+          <a class="nav__link" href="/zh/about/" data-i18n="nav_about">About</a>
           <a class="nav__link" href="/zh/blog/" aria-current="page" data-i18n="nav_blog">Blog</a>
-          <a class="nav__link" href="/projects/" data-i18n="nav_projects">Projects</a>
+          <a class="nav__link" href="/zh/projects/" data-i18n="nav_projects">Projects</a>
         </div>
 
-        <button class="nav__lang" type="button" aria-pressed="false">中文</button>
+        <button class="nav__lang" type="button" aria-pressed="true">EN</button>
       </nav>
     </header>
+
+    <div class="nav-trigger" id="nav-trigger" aria-hidden="true"></div>
 
     <main class="page">
       <div class="page-shell stack">
         <section class="page-header">
-          <p class="eyebrow" data-i18n="blog_title">Blog</p>
-          <h1 class="page-title" data-i18n="blog_index_h1">Notes on building calm products</h1>
+          <h1 class="page-title" data-i18n="blog_index_h1">博客</h1>
           <p class="page-lede">
-            <span data-i18n="blog_index_lede">Markdown-only posts, no CMS. Each post lives beside the code so publishing stays lightweight and versioned.</span>
+            <span data-i18n="blog_index_lede">一些我总是忘记写、也忘记更新的杂七杂八。</span>
           </p>
         </section>
 
-        <section class="surface-card stack">
-          <h2 class="section-title" data-i18n="blog_latest">Latest posts</h2>
+        <section class="blog-index" aria-label="博客文章">
           <div class="blog-controls">
-            <label class="muted" for="blogSearch" data-i18n="blog_search_label">Search</label>
-            <input
-              id="blogSearch"
-              class="blog-search"
-              type="search"
-              placeholder="Search title or tags…"
-              aria-label="Search blog posts"
-              autocomplete="off"
-            />
+            <div class="blog-search-field">
+              <span class="blog-search-field__icon" aria-hidden="true">🔍</span>
+              <input
+                id="blogSearch"
+                class="blog-search"
+                type="search"
+                placeholder="搜索文章..."
+                aria-label="搜索博客文章"
+                autocomplete="off"
+              />
+            </div>
           </div>
           <div id="blogList" class="blog-list" role="list">
             <p class="muted">Loading posts…</p>
           </div>
+          <nav
+            id="blogPagination"
+            class="blog-pagination"
+            aria-label="博客分页"
+            hidden
+          ></nav>
         </section>
       </div>
     </main>
@@ -256,13 +248,15 @@ const renderZhBlogIndexHtml = () => `<!doctype html>
     <footer class="footer reveal" id="siteFooter">
       <div class="footer__inner footer__inner--simple">
         <div class="footer__line" data-i18n="footer_line1">
-          © 2026 Tony. All rights reserved.
+          © 2026 Tony Hu. All rights reserved.
         </div>
         <div class="footer__tiny" data-i18n="footer_line2">
           This website uses cookies for basic functionality and analytics.
         </div>
         <div class="footer__line">
-          <a class="footer__link" href="/privacy/" data-i18n="footer_privacy">Privacy Policy</a>
+          <a class="footer__link" href="/zh/privacy/" data-i18n="footer_privacy">Privacy Policy</a>
+          <span class="footer__separator" aria-hidden="true">·</span>
+          <a class="footer__link" href="/zh/legal-notices/" data-i18n="footer_legal_notices">法律声明</a>
         </div>
       </div>
     </footer>
@@ -318,7 +312,6 @@ const main = async () => {
     posts.push({
       title: data.title,
       date: data.date,
-      tags: data.tags,
       summary: data.summary,
       lang: data.lang,
       slug: data.slug,
@@ -333,13 +326,22 @@ const main = async () => {
 
   await fs.writeFile(OUT_MANIFEST, JSON.stringify(posts, null, 2) + "\n", "utf8");
 
-  for (const post of posts) {
-    const baseDir = post.lang === "zh" ? ZH_BLOG_DIR : BLOG_DIR;
-    const dir = path.join(baseDir, post.slug);
+  const englishPosts = posts.filter((post) => post.lang === "en");
+
+  for (const post of englishPosts) {
+    const dir = path.join(BLOG_DIR, post.slug);
     await fs.mkdir(dir, { recursive: true });
     await fs.writeFile(
       path.join(dir, "index.html"),
       renderPostIndexHtml(post),
+      "utf8",
+    );
+
+    const zhFallbackDir = path.join(ZH_BLOG_DIR, post.slug);
+    await fs.mkdir(zhFallbackDir, { recursive: true });
+    await fs.writeFile(
+      path.join(zhFallbackDir, "index.html"),
+      renderPostIndexHtml({ ...post, lang: "zh" }),
       "utf8",
     );
   }
@@ -374,8 +376,8 @@ const main = async () => {
   };
 
   // Delete stale generated post folders in both EN and ZH trees.
-  const enSlugs = new Set(posts.filter((p) => p.lang === "en").map((p) => p.slug));
-  const zhSlugs = new Set(posts.filter((p) => p.lang === "zh").map((p) => p.slug));
+  const enSlugs = new Set(englishPosts.map((p) => p.slug));
+  const zhSlugs = new Set(enSlugs);
   await cleanupGeneratedDirs({ baseDir: BLOG_DIR, keepDirs: enSlugs });
   await cleanupGeneratedDirs({ baseDir: ZH_BLOG_DIR, keepDirs: zhSlugs });
 

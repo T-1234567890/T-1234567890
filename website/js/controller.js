@@ -4,22 +4,23 @@ const I18N = {
     nav_links: "Links",
     nav_projects: "Projects",
     nav_blog: "Blog",
-    hero_hi: "Hi, I’m",
+    hero_greeting: "Hi there 👋",
+    hero_intro: "I'm",
     about_title: "About",
     about_body: "This is a landing page, not a portfolio. One page. One vibe.",
     links_title: "Links",
     links_sub: "Find me around the internet.",
-    links_discord_join: "Join Discord Community",
+    links_discord_join: "Join the Discord Community",
     projects_title: "Projects",
     projects_body: "Keep it minimal. A single highlight is enough.",
     blog_title: "Blog",
     blog_body: "Notes on building calm, technical UI.",
-    footer_line1: "© 2026 Tony. All rights reserved.",
+    footer_line1: "© 2026 Tony Hu. All rights reserved.",
     footer_line2: "This website uses cookies for basic functionality and analytics.",
     footer_privacy: "Privacy Policy",
-    blog_index_h1: "Notes & Experiments",
-    blog_index_lede:
-      "Small thoughts about building quiet products, learning, and making things slowly.",
+    footer_legal_notices: "Legal Notices",
+    blog_index_h1: "Blog",
+    blog_index_lede: "Random stuff I always forget to write and update.",
     blog_latest: "Latest posts",
     blog_search_label: "Search",
     blog_back: "Back to blog",
@@ -27,21 +28,21 @@ const I18N = {
     about_me_line1: "A Human.",
     about_me_line2: "An IB Student.",
     about_tools_title: "⚙️ Technologies & Tools",
-    projects_lede: "Things I build and experiment with.",
+    projects_lede: "A selection of things I've built.",
     project_tinfo_desc:
-      "A fast Rust-powered terminal information hub and all-in-one developer toolbox.",
+      "A terminal toolbox built around a growing plugin ecosystem.",
     project_fluxclip_desc:
-      "A local-first data flow system for everything you copy on your Mac.",
+      "A clipboard workspace built around context, data flow, and workflow.",
     project_orchestrana_desc:
-      "A calm open-source focus app for macOS, combining a clean timer, focus flow sessions, and task awareness.",
+      "Plan. Focus. Done.",
     project_musedial_desc:
-      "A tactile iPhone music player with a glass dial, immersive album art, Apple Music, local audio, streams, and recognition.",
+      "Retro, reimagined.",
     project_maneuver_desc:
-      "A native macOS workspace for building, monitoring, and debugging GitHub Actions workflows.",
+      "A native macOS workspace for GitHub Actions, with a built-in GitHub inbox.",
     project_oci_desc:
-      "An open, deterministic color identity standard for digital design, based on stable OKLCH and OKLab values.",
-    project_external_hint: "Opens external site",
+      "A deterministic digital color standard for consistent color identity.",
     privacy_eyebrow: "Privacy",
+    privacy_title: "Privacy Policy",
     privacy_last_updated: "Last updated: Feb 27, 2026",
     privacy_overview_title: "1. Overview",
     privacy_overview_p1: "This website is a personal website and portfolio.",
@@ -87,7 +88,8 @@ const I18N = {
     nav_links: "链接",
     nav_projects: "项目",
     nav_blog: "博客",
-    hero_hi: "你好，我是",
+    hero_greeting: "你好 👋",
+    hero_intro: "我是",
     about_title: "关于",
     about_body: "这里不是作品集，而是一页式着陆页：一个页面，一个氛围。",
     links_title: "链接",
@@ -97,11 +99,12 @@ const I18N = {
     projects_body: "保持极简：一个重点就足够。",
     blog_title: "博客",
     blog_body: "记录如何做出冷静、技术感的 UI。",
-    footer_line1: "© 2026 Tony。保留所有权利。",
+    footer_line1: "© 2026 Tony Hu. All rights reserved.",
     footer_line2: "本网站使用 Cookie 以支持基础功能与分析。",
     footer_privacy: "隐私政策",
-    blog_index_h1: "笔记与实验",
-    blog_index_lede: "记录一些关于做产品、学习与慢慢创造的想法。",
+    footer_legal_notices: "法律声明",
+    blog_index_h1: "博客",
+    blog_index_lede: "一些我总是忘记写、也忘记更新的杂七杂八。",
     blog_latest: "最新文章",
     blog_search_label: "搜索",
     blog_back: "返回博客",
@@ -109,21 +112,21 @@ const I18N = {
     about_me_line1: "一个人。",
     about_me_line2: "一个 IB 学生。",
     about_tools_title: "⚙️ 技术与工具",
-    projects_lede: "我正在构建与实验的一些东西。",
+    projects_lede: "我的一些精选作品。",
     project_tinfo_desc:
-      "一个由 Rust 驱动的快速终端信息中心，也是一个一体化的开发者工具箱。",
+      "一个围绕持续扩展的插件生态构建的终端工具箱。",
     project_fluxclip_desc:
-      "一个本地优先的 macOS 数据流系统，用来管理你在 Mac 上复制的一切。",
+      "一个围绕上下文、数据流与工作流构建的剪贴板工作区。",
     project_orchestrana_desc:
-      "一个安静的开源 macOS 专注应用，结合简洁计时器、专注流会话和任务感知。",
+      "计划。专注。完成。",
     project_musedial_desc:
-      "一个触感化的 iPhone 音乐播放器，包含玻璃拨盘、沉浸式专辑封面、Apple Music、本地音频、流媒体和音乐识别。",
+      "复古，重新想象。",
     project_maneuver_desc:
-      "一个原生 macOS 工作区，用来构建、监控和调试 GitHub Actions 工作流。",
+      "一个用于 GitHub Actions 的原生 macOS 工作区，内置 GitHub 收件箱。",
     project_oci_desc:
-      "一个面向数字设计的开放、确定性颜色身份标准，基于稳定的 OKLCH 与 OKLab 数值。",
-    project_external_hint: "打开外部网站",
+      "一个确保颜色身份一致的确定性数字色彩标准。",
     privacy_eyebrow: "隐私",
+    privacy_title: "隐私政策",
     privacy_last_updated: "最后更新：2026-02-27",
     privacy_overview_title: "1. 概述",
     privacy_overview_p1: "本网站是一个个人网站与作品集。",
@@ -159,18 +162,47 @@ const I18N = {
   },
 };
 
+export const normalizeLocalizedPath = (path) => {
+  const value = path || "/";
+  const withoutIndex = value.replace(/\/index\.html\/?$/i, "");
+  const normalized = withoutIndex.replace(/\/+$/, "");
+  return normalized || "/";
+};
+
+export const stripLanguagePrefix = (path) => {
+  const normalized = normalizeLocalizedPath(path);
+  if (normalized === "/zh") return "/";
+  return normalized.startsWith("/zh/")
+    ? normalized.slice(3) || "/"
+    : normalized;
+};
+
+export const isLocalizedRoute = (path) => {
+  const normalized = stripLanguagePrefix(path);
+  return (
+    normalized === "/" ||
+    normalized === "/about" ||
+    normalized === "/blog" ||
+    /^\/blog\/[^/]+$/.test(normalized) ||
+    normalized === "/projects" ||
+    normalized === "/privacy" ||
+    normalized === "/legal-notices"
+  );
+};
+
+export const buildLocalizedUrl = (path, lang) => {
+  const normalized = stripLanguagePrefix(path);
+  const localized =
+    lang === "zh"
+      ? normalized === "/"
+        ? "/zh"
+        : `/zh${normalized}`
+      : normalized;
+  return localized === "/" ? "/" : `${localized}/`;
+};
+
 export function initLanguageToggle({ buttonEl }) {
   const storageKey = "lang";
-  const manifestPath = "/blog/manifest.json";
-
-  const readStored = () => {
-    try {
-      const v = localStorage.getItem(storageKey);
-      return v === "zh" || v === "en" ? v : null;
-    } catch {
-      return null;
-    }
-  };
 
   const writeStored = (lang) => {
     try {
@@ -178,41 +210,9 @@ export function initLanguageToggle({ buttonEl }) {
     } catch {}
   };
 
-  const normalizePath = (p) => {
-    // Keep "/" as-is; otherwise trim trailing slashes.
-    if (!p) return "/";
-    return p === "/" ? "/" : p.replace(/\/+$/, "");
-  };
-
   const getLangFromPath = () => {
-    const p = normalizePath(window.location.pathname || "/");
+    const p = normalizeLocalizedPath(window.location.pathname || "/");
     return p === "/zh" || p.startsWith("/zh/") ? "zh" : "en";
-  };
-
-  const getBlogRouteInfo = () => {
-    const p = normalizePath(window.location.pathname || "/");
-    // /blog or /blog/<slug>
-    let m = p.match(/^\/blog(?:\/([^/]+))?$/);
-    if (m) return { isBlog: true, slug: m[1] || null, lang: "en" };
-    // /zh/blog or /zh/blog/<slug>
-    m = p.match(/^\/zh\/blog(?:\/([^/]+))?$/);
-    if (m) return { isBlog: true, slug: m[1] || null, lang: "zh" };
-    return { isBlog: false, slug: null, lang: getLangFromPath() };
-  };
-
-  const buildBlogUrl = ({ slug, lang }) => {
-    const base = lang === "zh" ? "/zh/blog" : "/blog";
-    if (!slug) return `${base}/`;
-    return `${base}/${slug}/`;
-  };
-
-  const setDisabled = (reason) => {
-    buttonEl.disabled = true;
-    buttonEl.setAttribute("aria-disabled", "true");
-    // Minimal visual disable without redesigning CSS.
-    buttonEl.style.opacity = "0.55";
-    buttonEl.style.cursor = "not-allowed";
-    if (reason) buttonEl.title = reason;
   };
 
   const apply = (lang) => {
@@ -227,74 +227,27 @@ export function initLanguageToggle({ buttonEl }) {
       if (typeof next === "string") node.textContent = next;
     }
 
+    for (const link of document.querySelectorAll('a[href^="/"]')) {
+      const href = link.getAttribute("href");
+      if (!href || !isLocalizedRoute(href)) continue;
+      link.setAttribute("href", buildLocalizedUrl(href, lang));
+    }
+
     buttonEl.textContent = lang === "zh" ? "EN" : "中文";
     buttonEl.setAttribute("aria-pressed", lang === "zh" ? "true" : "false");
     writeStored(lang);
+    document.documentElement.dataset.i18nReady = "true";
   };
 
-  const stored = readStored();
-  const blogInfo = getBlogRouteInfo();
-
-  // URL is the source of truth for blog routes.
-  // If user preference differs, redirect to the matching blog URL.
-  if (blogInfo.isBlog && stored && stored !== blogInfo.lang) {
-    // Index routes always exist (generated), so redirect immediately.
-    if (!blogInfo.slug) {
-      window.location.replace(
-        buildBlogUrl({ slug: blogInfo.slug, lang: stored }),
-      );
-      return;
-    }
-
-    // Post routes may not have translations; only redirect if the other language exists.
-    fetch(manifestPath)
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error("manifest"))))
-      .then((manifest) => {
-        const hasStored = Array.isArray(manifest)
-          ? manifest.some((p) => p?.slug === blogInfo.slug && p?.lang === stored)
-          : false;
-        if (hasStored) {
-          window.location.replace(buildBlogUrl({ slug: blogInfo.slug, lang: stored }));
-        } else {
-          setDisabled("Translation not available");
-        }
-      })
-      .catch(() => {
-        // If we can't confirm, don't redirect.
-      });
-  }
-
-  let lang = blogInfo.isBlog ? blogInfo.lang : (stored ?? getLangFromPath());
+  const lang = getLangFromPath();
   apply(lang);
 
-  // For blog posts, disable toggle if the translation doesn't exist.
-  if (blogInfo.isBlog && blogInfo.slug) {
-    const other = blogInfo.lang === "en" ? "zh" : "en";
-    fetch(manifestPath)
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error("manifest"))))
-      .then((manifest) => {
-        const hasOther = Array.isArray(manifest)
-          ? manifest.some((p) => p?.slug === blogInfo.slug && p?.lang === other)
-          : false;
-        if (!hasOther) setDisabled("Translation not available");
-      })
-      .catch(() => {
-        // If we can't confirm, keep the toggle enabled.
-      });
-  }
-
   buttonEl.addEventListener("click", () => {
-    const info = getBlogRouteInfo();
-    if (info.isBlog) {
-      if (buttonEl.disabled) return;
-      const next = info.lang === "en" ? "zh" : "en";
-      writeStored(next);
-      window.location.assign(buildBlogUrl({ slug: info.slug, lang: next }));
-      return;
-    }
-
-    lang = lang === "en" ? "zh" : "en";
-    apply(lang);
+    const next = getLangFromPath() === "en" ? "zh" : "en";
+    writeStored(next);
+    window.location.assign(
+      buildLocalizedUrl(window.location.pathname || "/", next),
+    );
   });
 }
 
@@ -364,14 +317,7 @@ export function initHeroScrollTransition({
     swapObs.observe(heroSentinelEl);
   }
 
-  const navObs = new IntersectionObserver(
-    (entries) => {
-      const entry = entries[0];
-      navEl.classList.toggle("is-compact", !entry?.isIntersecting);
-    },
-    { threshold: 0 },
-  );
-  navObs.observe(navSentinelEl);
+  const stopNavTransition = initNavCompactTransition({ navSentinelEl, navEl });
 
   // Initial state sync
   heroRootEl.classList.add("is-active");
@@ -380,7 +326,34 @@ export function initHeroScrollTransition({
 
   return () => {
     activeObs.disconnect();
-    navObs.disconnect();
+    stopNavTransition();
     swapObs?.disconnect();
+  };
+}
+
+export function initNavCompactTransition({ navSentinelEl, navEl }) {
+  let animationFrame = 0;
+
+  const syncNavState = () => {
+    animationFrame = 0;
+    navEl.classList.toggle(
+      "is-compact",
+      navSentinelEl.getBoundingClientRect().top <= 0,
+    );
+  };
+
+  const queueNavStateSync = () => {
+    if (animationFrame) return;
+    animationFrame = window.requestAnimationFrame(syncNavState);
+  };
+
+  syncNavState();
+  window.addEventListener("scroll", queueNavStateSync, { passive: true });
+  window.addEventListener("resize", queueNavStateSync);
+
+  return () => {
+    window.cancelAnimationFrame(animationFrame);
+    window.removeEventListener("scroll", queueNavStateSync);
+    window.removeEventListener("resize", queueNavStateSync);
   };
 }

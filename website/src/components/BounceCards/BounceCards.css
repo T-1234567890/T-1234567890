@@ -1,0 +1,100 @@
+.bounceCardsContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.bounce-card {
+  position: absolute;
+  width: clamp(138px, 16vw, 176px);
+  aspect-ratio: 1;
+  border: 4px solid rgba(255, 255, 255, 0.96);
+  border-radius: 25px;
+  overflow: visible;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 34px rgba(11, 15, 20, 0.14);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.bounce-card__action {
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 22px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(241, 247, 246, 0.96));
+  color: rgba(11, 15, 20, 0.8);
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bounce-card__action:focus-visible {
+  outline: 3px solid rgba(11, 15, 20, 0.72);
+  outline-offset: -6px;
+  border-radius: 20px;
+}
+
+.bounce-card__icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.bounce-card__label {
+  font-family: var(--mono);
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.bounce-card__copy-note {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  z-index: 2;
+  min-width: max-content;
+  transform: translate3d(-50%, 6px, 0);
+  padding: 8px 11px;
+  border: 1px solid rgba(11, 15, 20, 0.1);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  color: rgba(11, 15, 20, 0.7);
+  box-shadow: 0 16px 34px rgba(11, 15, 20, 0.1);
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms var(--ease), transform 180ms var(--ease);
+}
+
+.bounce-card__copy-note.is-visible {
+  opacity: 1;
+  transform: translate3d(-50%, 0, 0);
+}
+
+@media (max-width: 760px) {
+  .bounceCardsContainer {
+    height: 310px !important;
+    transform: scale(0.68);
+    transform-origin: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bounce-card {
+    will-change: auto;
+  }
+}

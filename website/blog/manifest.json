@@ -2,13 +2,6 @@
   {
     "title": "How a Simple Pomodoro Experiment Became Orchestrana",
     "date": "2026-05-16",
-    "tags": [
-      "orchestrana",
-      "productivity",
-      "workflow",
-      "macos",
-      "development"
-    ],
     "summary": "How a small AI-assisted Pomodoro experiment slowly evolved into a native macOS execution-focused workflow system.",
     "lang": "en",
     "slug": "how-a-simple-pomodoro-experiment-became-orchestrana",
@@ -18,13 +11,6 @@
   {
     "title": "一个简单的番茄钟实验，为什么最后变成了 Orchestrana",
     "date": "2026-05-16",
-    "tags": [
-      "orchestrana",
-      "productivity",
-      "workflow",
-      "macos",
-      "development"
-    ],
     "summary": "一个原本只是测试 AI 辅助开发能力的 Pomodoro 小实验，是如何逐渐演化成一个原生 macOS 工作流与执行系统的。",
     "lang": "zh",
     "slug": "how-a-simple-pomodoro-experiment-became-orchestrana",
@@ -34,12 +20,6 @@
   {
     "title": "Building Terminal Info: A Rust CLI Toolbox with a Plugin Ecosystem",
     "date": "2026-03-15",
-    "tags": [
-      "rust",
-      "cli",
-      "plugins",
-      "developer-tools"
-    ],
     "summary": "Why I built Terminal Info, how the registry-based plugin system works, and what kind of developer toolbox I want it to become.",
     "lang": "en",
     "slug": "terminal-info",
@@ -49,12 +29,6 @@
   {
     "title": "Terminal Info：一个带插件生态的 Rust CLI 工具箱",
     "date": "2026-03-15",
-    "tags": [
-      "rust",
-      "cli",
-      "插件",
-      "开发者工具"
-    ],
     "summary": "为什么我要做 Terminal Info、基于注册的插件系统如何工作，以及我希望它成长为什么样的开发者工具箱。",
     "lang": "zh",
     "slug": "terminal-info",
@@ -64,10 +38,6 @@
   {
     "title": "Hello World",
     "date": "2026-02-28",
-    "tags": [
-      "hello world",
-      "notes"
-    ],
     "summary": "What I learned about pacing side projects and keeping interfaces quiet.",
     "lang": "en",
     "slug": "hello-world",
@@ -77,10 +47,6 @@
   {
     "title": "你好，世界",
     "date": "2026-02-28",
-    "tags": [
-      "hello world",
-      "notes"
-    ],
     "summary": "What I learned about pacing side projects and keeping interfaces quiet.",
     "lang": "zh",
     "slug": "hello-world",

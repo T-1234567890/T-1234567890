@@ -1,4 +1,8 @@
-import { initHeroScrollTransition, initLanguageToggle } from "./controller.js";
+import {
+  initHeroScrollTransition,
+  initLanguageToggle,
+  initNavCompactTransition,
+} from "./controller.js";
 
 const prefersReduced =
   window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
@@ -60,17 +64,17 @@ const startNameWriter = () => {
   typedNameEl.textContent = "";
 
   if (prefersReduced) {
-    typedNameEl.textContent = "Tony";
+    typedNameEl.textContent = "Tony.";
     return;
   }
 
   const Typewriter = getTypewriter();
   if (!Typewriter) {
-    typedNameEl.textContent = "Tony";
+    typedNameEl.textContent = "Tony.";
     return;
   }
 
-  const identities = ["Tony", "1234567890-", "T-1234567890"];
+  const identities = ["Tony.", "1234567890-.", "T-1234567890."];
 
   nameWriter = new Typewriter(typedNameEl, {
     loop: true,
@@ -115,6 +119,8 @@ if (heroRootEl && heroSentinelEl && navSentinelEl && navEl) {
     },
     terminalEnabled: !prefersReduced,
   });
+} else if (navEl && navSentinelEl) {
+  initNavCompactTransition({ navSentinelEl, navEl });
 }
 
 const initReveal = () => {

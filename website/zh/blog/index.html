@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Blog — 1234567890</title>
+    <title>Blog - 1234567890.dev</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,52 +13,62 @@
     <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
     <link rel="icon" href="/assets/logo.png" type="image/png" />
     <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/js/pixel-blast-background.css" />
   </head>
-  <body class="subpage" data-view="blog-index">
+  <body class="subpage pixel-blast-page" data-view="blog-index">
     <div class="bg" aria-hidden="true"></div>
+    <div id="page-pixel-blast" class="page-pixel-blast" aria-hidden="true"></div>
 
     <header class="topbar">
       <nav class="nav" aria-label="Primary">
-        <a class="nav__logo" href="/" aria-label="Home">
+        <a class="nav__logo" href="/zh/" aria-label="Home">
           <img src="/assets/icon2.png" alt="" width="28" height="28" />
         </a>
 
         <div class="nav__center">
-          <a class="nav__link" href="/about/" data-i18n="nav_about">About</a>
+          <a class="nav__link" href="/zh/about/" data-i18n="nav_about">About</a>
           <a class="nav__link" href="/zh/blog/" aria-current="page" data-i18n="nav_blog">Blog</a>
-          <a class="nav__link" href="/projects/" data-i18n="nav_projects">Projects</a>
+          <a class="nav__link" href="/zh/projects/" data-i18n="nav_projects">Projects</a>
         </div>
 
-        <button class="nav__lang" type="button" aria-pressed="false">中文</button>
+        <button class="nav__lang" type="button" aria-pressed="true">EN</button>
       </nav>
     </header>
+
+    <div class="nav-trigger" id="nav-trigger" aria-hidden="true"></div>
 
     <main class="page">
       <div class="page-shell stack">
         <section class="page-header">
-          <p class="eyebrow" data-i18n="blog_title">Blog</p>
-          <h1 class="page-title" data-i18n="blog_index_h1">Notes on building calm products</h1>
+          <h1 class="page-title" data-i18n="blog_index_h1">博客</h1>
           <p class="page-lede">
-            <span data-i18n="blog_index_lede">Markdown-only posts, no CMS. Each post lives beside the code so publishing stays lightweight and versioned.</span>
+            <span data-i18n="blog_index_lede">一些我总是忘记写、也忘记更新的杂七杂八。</span>
           </p>
         </section>
 
-        <section class="surface-card stack">
-          <h2 class="section-title" data-i18n="blog_latest">Latest posts</h2>
+        <section class="blog-index" aria-label="博客文章">
           <div class="blog-controls">
-            <label class="muted" for="blogSearch" data-i18n="blog_search_label">Search</label>
-            <input
-              id="blogSearch"
-              class="blog-search"
-              type="search"
-              placeholder="Search title or tags…"
-              aria-label="Search blog posts"
-              autocomplete="off"
-            />
+            <div class="blog-search-field">
+              <span class="blog-search-field__icon" aria-hidden="true">🔍</span>
+              <input
+                id="blogSearch"
+                class="blog-search"
+                type="search"
+                placeholder="搜索文章..."
+                aria-label="搜索博客文章"
+                autocomplete="off"
+              />
+            </div>
           </div>
           <div id="blogList" class="blog-list" role="list">
             <p class="muted">Loading posts…</p>
           </div>
+          <nav
+            id="blogPagination"
+            class="blog-pagination"
+            aria-label="博客分页"
+            hidden
+          ></nav>
         </section>
       </div>
     </main>
@@ -66,18 +76,21 @@
     <footer class="footer reveal" id="siteFooter">
       <div class="footer__inner footer__inner--simple">
         <div class="footer__line" data-i18n="footer_line1">
-          © 2026 Tony. All rights reserved.
+          © 2026 Tony Hu. All rights reserved.
         </div>
         <div class="footer__tiny" data-i18n="footer_line2">
           This website uses cookies for basic functionality and analytics.
         </div>
         <div class="footer__line">
-          <a class="footer__link" href="/privacy/" data-i18n="footer_privacy">Privacy Policy</a>
+          <a class="footer__link" href="/zh/privacy/" data-i18n="footer_privacy">Privacy Policy</a>
+          <span class="footer__separator" aria-hidden="true">·</span>
+          <a class="footer__link" href="/zh/legal-notices/" data-i18n="footer_legal_notices">法律声明</a>
         </div>
       </div>
     </footer>
 
     <script type="module" src="/js/main.js"></script>
     <script type="module" src="/blog/blog.js"></script>
+    <script type="module" src="/js/pixel-blast-background.js"></script>
   </body>
 </html>

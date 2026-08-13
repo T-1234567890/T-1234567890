@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-Hans" data-lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects - 1234567890.dev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    />
+    <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/logo.png" type="image/png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/js/react-app.css" />
+    <link rel="stylesheet" href="/js/pixel-blast-background.css" />
+  </head>
+  <body class="subpage projects-page pixel-blast-page">
+    <div class="bg" aria-hidden="true"></div>
+    <div id="page-pixel-blast" class="page-pixel-blast" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__logo" href="/zh/" aria-label="Home">
+          <img src="/assets/icon2.png" alt="" width="28" height="28" />
+        </a>
+
+        <div class="nav__center">
+          <a class="nav__link" href="/zh/about/" data-i18n="nav_about">About</a>
+          <a class="nav__link" href="/zh/blog/" data-i18n="nav_blog">Blog</a>
+          <a class="nav__link" href="/zh/projects/" aria-current="page" data-i18n="nav_projects">Projects</a>
+        </div>
+
+        <button class="nav__lang" type="button" aria-pressed="true">EN</button>
+      </nav>
+    </header>
+
+    <div class="nav-trigger" id="nav-trigger" aria-hidden="true"></div>
+
+    <main class="page">
+      <div class="page-shell stack">
+        <section class="page-header">
+          <h1 class="page-title" data-i18n="projects_title">Projects</h1>
+          <p class="page-lede" data-i18n="projects_lede">我的一些精选作品。</p>
+        </section>
+
+        <section class="projects-grid" id="projects-grid-root" aria-label="Projects list">
+          <a
+            class="project-card project-card--external"
+            href="https://tinfo.1234567890.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Terminal Info，开源项目"
+          >
+            <div class="project-card__icon" aria-hidden="true">
+              <span class="project-card__text-icon">tinfo</span>
+            </div>
+            <span class="project-card__oss-badge" aria-hidden="true"><span>OSS<sup>*</sup></span></span>
+            <div class="project-card__meta">
+              <h2 class="project-card__title">Terminal Info</h2>
+              <p class="project-card__desc">
+                一个围绕持续扩展的插件生态构建的<br />终端工具箱。
+              </p>
+            </div>
+            <span class="project-card__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="project-card project-card--external"
+            href="https://fluxclip.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="FluxClip"
+          >
+            <div class="project-card__icon" aria-hidden="true">
+              <img src="/assets/FluxClip%20app%20icon%201-iOS-Default-1024x1024@1x.png" alt="" />
+            </div>
+            <div class="project-card__meta">
+              <h2 class="project-card__title">FluxClip</h2>
+              <p class="project-card__desc" data-i18n="project_fluxclip_desc">一个围绕上下文、数据流与工作流构建的剪贴板工作区。</p>
+            </div>
+            <span class="project-card__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="project-card project-card--external"
+            href="https://orchestrana.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Orchestrana，开源项目"
+          >
+            <div class="project-card__icon" aria-hidden="true">
+              <img src="/assets/Orchestrana%20icon%201-iOS-Default-1024x1024@1x.png" alt="" />
+            </div>
+            <span class="project-card__oss-badge" aria-hidden="true"><span>OSS<sup>*</sup></span></span>
+            <div class="project-card__meta">
+              <h2 class="project-card__title">Orchestrana</h2>
+              <p class="project-card__desc" data-i18n="project_orchestrana_desc">计划。专注。完成。</p>
+            </div>
+            <span class="project-card__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="project-card project-card--external"
+            href="https://musedial.1234567890.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="MuseDial"
+          >
+            <div class="project-card__icon" aria-hidden="true">
+              <img src="/assets/musedial-icon.png" alt="" />
+            </div>
+            <div class="project-card__meta">
+              <h2 class="project-card__title">MuseDial</h2>
+              <p class="project-card__desc" data-i18n="project_musedial_desc">复古，重新想象。</p>
+            </div>
+            <span class="project-card__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="project-card project-card--external"
+            href="https://getmaneuver.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Maneuver"
+          >
+            <div class="project-card__icon" aria-hidden="true">
+              <img src="/assets/maneuver-icon.png" alt="" />
+            </div>
+            <div class="project-card__meta">
+              <h2 class="project-card__title">Maneuver</h2>
+              <p class="project-card__desc" data-i18n="project_maneuver_desc">一个用于 GitHub Actions 的原生 macOS 工作区，内置 GitHub 收件箱。</p>
+            </div>
+            <span class="project-card__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="project-card project-card--external"
+            href="https://github.com/T-1234567890/open-chroma-index"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Chroma Index，开源项目"
+          >
+            <div class="project-card__icon" aria-hidden="true">
+              <span class="project-card__text-icon">OCI</span>
+            </div>
+            <span class="project-card__oss-badge" aria-hidden="true"><span>OSS<sup>*</sup></span></span>
+            <div class="project-card__meta">
+              <h2 class="project-card__title">Open Chroma Index</h2>
+              <p class="project-card__desc">一个确保颜色身份一致的确定性数字<br />色彩标准。</p>
+            </div>
+            <span class="project-card__arrow" aria-hidden="true">↗</span>
+          </a>
+        </section>
+      </div>
+    </main>
+
+    <aside class="projects-license-note" aria-label="开源许可证说明">
+      <p class="projects-license-note__text">
+        * 上方展示的开源项目：Terminal Info — Apache License 2.0；Open Chroma Index — Apache License
+        2.0；Orchestrana — 开源客户端采用 MIT License。官方托管服务与 Orchestrana 品牌受
+        <a href="https://github.com/T-1234567890/orchestrana-app/blob/main/TERMS.md" target="_blank" rel="noopener noreferrer">TERMS.md</a>
+        约束。本页展示的部分产品及项目还可能受其各自适用的隐私政策、服务条款、最终用户许可协议（EULA）及其他条款约束。
+      </p>
+    </aside>
+
+    <footer class="footer reveal" id="siteFooter">
+      <div class="footer__inner footer__inner--simple">
+        <div class="footer__line" data-i18n="footer_line1">
+          © 2026 Tony Hu. All rights reserved.
+        </div>
+        <div class="footer__tiny" data-i18n="footer_line2">
+          This website uses cookies for basic functionality and analytics.
+        </div>
+        <div class="footer__line">
+          <a class="footer__link" href="/zh/privacy/" data-i18n="footer_privacy">Privacy Policy</a>
+          <span class="footer__separator" aria-hidden="true">·</span>
+          <a class="footer__link" href="/zh/legal-notices/" data-i18n="footer_legal_notices">法律声明</a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/react-app.js"></script>
+    <script type="module" src="/js/pixel-blast-background.js"></script>
+  </body>
+</html>

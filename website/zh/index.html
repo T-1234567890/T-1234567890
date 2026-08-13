@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-Hans" data-lang="zh" class="home-page">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Home - 1234567890.dev</title>
+    <meta
+      name="description"
+      content="A calm, minimal developer landing page with subtle motion."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    />
+    <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/logo.png" type="image/png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/js/react-app.css" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__logo" href="/zh/" aria-label="Home">
+          <img src="/assets/icon2.png" alt="" width="28" height="28" />
+        </a>
+
+        <div class="nav__center">
+          <a class="nav__link" href="/zh/about/" data-i18n="nav_about">About</a>
+          <a
+            class="nav__link"
+            href="/zh/blog/"
+            data-i18n="nav_blog"
+          >
+            Blog
+          </a>
+          <a
+            class="nav__link"
+            href="/zh/projects/"
+            data-i18n="nav_projects"
+          >
+            Projects
+          </a>
+        </div>
+
+        <button class="nav__lang" type="button" aria-pressed="true">
+          EN
+        </button>
+      </nav>
+    </header>
+
+    <main class="page">
+      <section class="hero state-name" id="heroRoot" aria-label="Hero">
+        <div class="hero__universe">
+          <div class="hero__stage">
+            <div id="hero-shape-grid" class="hero-shape-grid" aria-hidden="true"></div>
+
+            <div class="center-stack" id="center-stack">
+              <div class="hero-state hero-state--intro" id="hero-intro">
+                <h1 class="hero__title nameLine" id="heroNameLine">
+                  <span class="heroPrefix" data-i18n="hero_greeting">Hi there 👋</span>
+                  <span class="type-reserve hero-name-slot" aria-label="Introduction">
+                    <span class="heroLead" data-i18n="hero_intro">I'm</span>
+                    <span class="type-text" id="typedName"></span>
+                    <span class="cursor" aria-hidden="true">|</span>
+                  </span>
+                </h1>
+              </div>
+
+              <div
+                class="hero-state hero-state--terminal"
+                id="hero-terminal"
+                aria-hidden="true"
+              >
+                <div class="terminal-embed" id="heroTerminalCard" aria-hidden="true">
+                  <p align="center">
+                    <img
+                      src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=34&duration=4200&pause=40&color=7F7F7F&center=true&vCenter=true&width=1100&lines=Hello+World;%24+ls;%24+pwd;%24+cd+projects;%24+git+status;%24+git+pull;%24+npm+run+dev;python+main.py;main.rs;index.html;AppDelegate.swift;GoogleService-Info.plist;%24+code+.;README.md;%24+whoami;%24+rm+-rf;%24+_&repeat=true"
+                    />
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-scroll-space" aria-hidden="true"></div>
+
+          <div class="hero-trigger" id="heroSentinel" aria-hidden="true"></div>
+          <div class="nav-trigger" id="nav-trigger" aria-hidden="true"></div>
+        </div>
+
+        <div
+          id="hero-curved-divider"
+          class="hero-curved-divider"
+          aria-hidden="true"
+        ></div>
+      </section>
+
+      <section class="section" id="links" aria-label="Links">
+        <div class="section__inner section__inner--wide">
+          <div class="links-card reveal" id="linksCard">
+            <div class="links-card__head">
+              <h2 class="section__title links-card__title" data-i18n="links_title">
+                Links
+              </h2>
+              <p class="links-card__sub" data-i18n="links_sub">
+                Find me around the internet.
+              </p>
+            </div>
+
+            <div id="social-bounce-cards"></div>
+
+          </div>
+
+          <a
+            class="linkBtn linkBtn--wide discord-community-btn reveal"
+            href="https://discord.gg/dPEb6Wsfze"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Join the Discord community"
+            data-tooltip="Join the 1234567890.dev Discord Community for beta links, product updates, feature requests, and behind-the-scenes notes."
+          >
+              <img
+                class="linkBtn__icon logo__img"
+                src="https://cdn.simpleicons.org/discord/0B0F14"
+                data-fallback="assets/icons/discord.svg"
+                alt=""
+              />
+            <span class="linkBtn__label" id="discord-community-label">加入 Discord 社区</span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="footer reveal" id="siteFooter">
+        <div class="footer__inner footer__inner--simple">
+          <div class="footer__line" data-i18n="footer_line1">
+            © 2026 Tony Hu. All rights reserved.
+          </div>
+          <div class="footer__tiny" data-i18n="footer_line2">
+            This website uses cookies for basic functionality and analytics.
+          </div>
+          <div class="footer__line">
+            <a class="footer__link" href="/zh/privacy/" data-i18n="footer_privacy">Privacy Policy</a>
+          <span class="footer__separator" aria-hidden="true">·</span>
+          <a class="footer__link" href="/zh/legal-notices/" data-i18n="footer_legal_notices">法律声明</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Privacy Policy lives at /privacy/ -->
+
+    <script src="https://unpkg.com/typewriter-effect@2.18.2/dist/core.js"></script>
+    <script type="module" src="/js/react-app.js"></script>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

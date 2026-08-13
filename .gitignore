@@ -47,3 +47,4 @@ __pycache__/
 # --- Other ---
 /website/blog/terminal-info/index.html
 /website/zh/blog/terminal-info/index.html
+website/design-qa.md
