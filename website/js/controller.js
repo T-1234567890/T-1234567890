@@ -39,6 +39,8 @@ const I18N = {
       "Retro, reimagined.",
     project_maneuver_desc:
       "A native macOS workspace for GitHub Actions, with a built-in GitHub inbox.",
+    project_fluidgantt_desc:
+      "Everything, laid out.",
     project_oci_desc:
       "A deterministic digital color standard for consistent color identity.",
     privacy_eyebrow: "Privacy",
@@ -123,6 +125,8 @@ const I18N = {
       "复古，重新想象。",
     project_maneuver_desc:
       "一个用于 GitHub Actions 的原生 macOS 工作区，内置 GitHub 收件箱。",
+    project_fluidgantt_desc:
+      "Everything, laid out.",
     project_oci_desc:
       "一个确保颜色身份一致的确定性数字色彩标准。",
     privacy_eyebrow: "隐私",

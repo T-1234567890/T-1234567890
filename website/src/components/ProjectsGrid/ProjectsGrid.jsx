@@ -58,6 +58,16 @@ const PROJECTS = [
     },
   },
   {
+    name: "FluidGantt",
+    href: "https://fluidgantt.1234567890.dev/",
+    icon: "https://fluidgantt.1234567890.dev/assets/icons/app-icon.webp",
+    accent: "#24AFA3",
+    description: {
+      en: "Everything, laid out.",
+      zh: "Everything, laid out.",
+    },
+  },
+  {
     name: "Open Chroma Index",
     href: "https://github.com/T-1234567890/open-chroma-index",
     textIcon: "OCI",
