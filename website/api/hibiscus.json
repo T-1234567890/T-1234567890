@@ -10,7 +10,7 @@
         "name": "MuseDial",
         "subtitle": "Retro, reimagined.",
         "iconUrl": "https://1234567890.dev/assets/musedial-icon.png",
-        "destinationUrl": "https://musedial.1234567890.dev/",
+        "destinationUrl": "https://apps.apple.com/us/app/musedial-music-player/id6787425152",
         "enabled": true,
         "rank": 1
       },
@@ -37,7 +37,7 @@
         "name": "Orchestrana",
         "subtitle": "Plan. Focus. Done.",
         "iconUrl": "https://1234567890.dev/assets/Orchestrana%20icon%201-iOS-Default-1024x1024@1x.png",
-        "destinationUrl": "https://orchestrana.app/",
+        "destinationUrl": "https://apps.apple.com/us/app/orchestrana-calm-focus/id6758972580",
         "enabled": true,
         "rank": 4
       },
