@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "lastUpdated": "2026-08-29",
+  "moreApps": {
+    "enabled": true,
+    "title": "More from 1234567890.dev",
+    "apps": [
+      {
+        "id": "musedial",
+        "name": "MuseDial",
+        "subtitle": "Retro, reimagined.",
+        "iconUrl": "https://1234567890.dev/assets/musedial-icon.png",
+        "destinationUrl": "https://musedial.1234567890.dev/",
+        "enabled": true,
+        "rank": 1
+      },
+      {
+        "id": "fluidgantt",
+        "name": "FluidGantt",
+        "subtitle": "Everything, laid out.",
+        "iconUrl": "https://fluidgantt.1234567890.dev/assets/icons/app-icon.webp",
+        "destinationUrl": "https://fluidgantt.1234567890.dev/",
+        "enabled": true,
+        "rank": 2
+      },
+      {
+        "id": "fluxclip",
+        "name": "FluxClip",
+        "subtitle": "A clipboard workspace built around context, data flow, and workflow.",
+        "iconUrl": "https://1234567890.dev/assets/FluxClip%20app%20icon%201-iOS-Default-1024x1024@1x.png",
+        "destinationUrl": "https://fluxclip.app/",
+        "enabled": true,
+        "rank": 3
+      },
+      {
+        "id": "orchestrana",
+        "name": "Orchestrana",
+        "subtitle": "Plan. Focus. Done.",
+        "iconUrl": "https://1234567890.dev/assets/Orchestrana%20icon%201-iOS-Default-1024x1024@1x.png",
+        "destinationUrl": "https://orchestrana.app/",
+        "enabled": true,
+        "rank": 4
+      },
+      {
+        "id": "maneuver",
+        "name": "Maneuver",
+        "subtitle": "A native macOS workspace for GitHub Actions, with a built-in GitHub inbox.",
+        "iconUrl": "https://1234567890.dev/assets/maneuver-icon.png",
+        "destinationUrl": "https://getmaneuver.com/",
+        "enabled": false,
+        "rank": 5
+      }
+    ]
+  },
+  "discord": {
+    "enabled": true,
+    "label": "Discord",
+    "subtitle": "Join the community",
+    "inviteUrl": "https://discord.gg/dPEb6Wsfze"
+  }
+}
