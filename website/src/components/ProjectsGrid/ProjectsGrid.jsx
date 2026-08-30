@@ -68,6 +68,17 @@ const PROJECTS = [
     },
   },
   {
+    name: "Hibiscus",
+    href: "https://hibiscus.1234567890.dev/",
+    icon: "https://hibiscus.1234567890.dev/assets/hibiscus-icon.png",
+    accent: "#8AAFA3",
+    openSource: true,
+    description: {
+      en: "Color by feel.",
+      zh: "Color by feel.",
+    },
+  },
+  {
     name: "Open Chroma Index",
     href: "https://github.com/T-1234567890/open-chroma-index",
     textIcon: "OCI",
