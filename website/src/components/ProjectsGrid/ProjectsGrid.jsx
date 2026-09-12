@@ -79,6 +79,25 @@ const PROJECTS = [
     },
   },
   {
+    name: "Origami Browser",
+    href: "https://origami.1234567890.dev/",
+    icon: "https://origami.1234567890.dev/assets/origami-icon.png",
+    accent: "#55D4B3",
+    openSource: true,
+    description: {
+      en: (
+        <>
+          A native, open-source browser for Mac,<br />built for the AI era.
+        </>
+      ),
+      zh: (
+        <>
+          A native, open-source browser for Mac,<br />built for the AI era.
+        </>
+      ),
+    },
+  },
+  {
     name: "Open Chroma Index",
     href: "https://github.com/T-1234567890/open-chroma-index",
     textIcon: "OCI",

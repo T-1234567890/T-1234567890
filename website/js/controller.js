@@ -43,6 +43,8 @@ const I18N = {
       "Everything, laid out.",
     project_hibiscus_desc:
       "Color by feel.",
+    project_origami_desc:
+      "A native, open-source browser for Mac, built for the AI era.",
     project_oci_desc:
       "A deterministic digital color standard for consistent color identity.",
     privacy_eyebrow: "Privacy",
@@ -131,6 +133,8 @@ const I18N = {
       "Everything, laid out.",
     project_hibiscus_desc:
       "Color by feel.",
+    project_origami_desc:
+      "A native, open-source browser for Mac, built for the AI era.",
     project_oci_desc:
       "一个确保颜色身份一致的确定性数字色彩标准。",
     privacy_eyebrow: "隐私",
