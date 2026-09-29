@@ -10,6 +10,7 @@ const I18N = {
     about_body: "This is a landing page, not a portfolio. One page. One vibe.",
     links_title: "Links",
     links_sub: "Find me around the internet.",
+    links_email_label: "Get in Touch",
     links_discord_join: "Join the Discord Community",
     projects_title: "Projects",
     projects_body: "Keep it minimal. A single highlight is enough.",
@@ -49,7 +50,7 @@ const I18N = {
       "A deterministic digital color standard for consistent color identity.",
     privacy_eyebrow: "Privacy",
     privacy_title: "Privacy Policy",
-    privacy_last_updated: "Last updated: Feb 27, 2026",
+    privacy_last_updated: "Last updated: September 29, 2026",
     privacy_overview_title: "1. Overview",
     privacy_overview_p1: "This website is a personal website and portfolio.",
     privacy_overview_p2:
@@ -100,6 +101,7 @@ const I18N = {
     about_body: "这里不是作品集，而是一页式着陆页：一个页面，一个氛围。",
     links_title: "链接",
     links_sub: "你可以在这些地方找到我。",
+    links_email_label: "联系邮箱",
     links_discord_join: "加入 Discord 社区",
     projects_title: "项目",
     projects_body: "保持极简：一个重点就足够。",
@@ -139,7 +141,7 @@ const I18N = {
       "一个确保颜色身份一致的确定性数字色彩标准。",
     privacy_eyebrow: "隐私",
     privacy_title: "隐私政策",
-    privacy_last_updated: "最后更新：2026-02-27",
+    privacy_last_updated: "最后更新：2026-09-29",
     privacy_overview_title: "1. 概述",
     privacy_overview_p1: "本网站是一个个人网站与作品集。",
     privacy_overview_p2:

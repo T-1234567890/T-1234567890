@@ -1,5 +1,7 @@
 # Legal Notices
 
+Last updated: September 29, 2026
+
 ## Website Copyright
 
 Copyright © 2026 Tony Hu. All rights reserved.
@@ -15,6 +17,10 @@ The Tech Stack layout and clock design on the About page were inspired by [Ashis
 Third-party trademarks and logos belong to their respective owners.
 
 Orchestrana™ is a trademark of Shenzhen Tushengjin Commercial Services Co., Ltd. (深圳市土生金商业服务有限公司）
+
+## Contact
+
+For questions about these notices, contact [hello@1234567890.dev](mailto:hello@1234567890.dev).
 
 ## React Bits
 
